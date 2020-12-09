@@ -12,4 +12,4 @@
 This blog site exists for the purpose as the supplementary for the course : **Study Artificial Intelligence from Theory-oriented to Practical Approcah**. <br>The course is conducted for those who are **interested** and **passionate** about the Artificial Intelligence and Computer Vision.
 
 ## Instructor and Teaching Assistants
-![](images/profiles.jpeg)
+![](images/profile.jpeg)
