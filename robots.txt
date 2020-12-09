@@ -1,1 +1,1 @@
-Sitemap: https://aungpaing98.github.io/Computer_Vision_Blog/sitemap.xml
+Sitemap: https://ytu-cvlab.github.io/Resource_Blog/sitemap.xml
