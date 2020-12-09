@@ -4,7 +4,7 @@
         "post0": {
             "title": "Basic Python",
             "content": "Learning Tip . We Strongly recommand learning with playing. We provide the notebook for student to get started. And if you ever get trouble with learning, please feel free to reach out to us. . Data Type . Data Type of a variable describe the properties that variable hold. There are four basic Data Type in Python: . Int | Float | String | Boolean | For example, &quot;Hello World&quot; is a String data type. We could use String to print the output for user to see. For calculation, we could use Int and Float data type. eg. . num1 = 3 num2 = 5 print(num1 + num2) . 8 . String . a = &quot;hello world&quot; print(type(a)) print(a) print() . Int . a = 10 print(type(a)) print(a) print() . Float . a = 10.0 print(type(a)) print(a) print() . Boolean . a = True print(type(a)) print(a) print() . Operations on Data Type . There are many built-in, already implemented, operations we could do in python. Like, for example, for arithemetic operations: . Addition (+) | Subtraction (-) | Multiplication (*) | Division (/) | Arithemetic operations, as the name suggest, can only be used in Int and Float Data Type. . For two String data type are added, it will just connect the two values. . a = 10 b = 12 astring = &quot;Hello .&quot; bstring = &quot;. User&quot; # Add print(&#39;Adding Two Integers&#39;) print(a + b) print() print(&#39;Adding Two Strings&#39;) print(astring + bstring) print() # Subtract print(&#39;Subtracting&#39;) print(a - b) print() # Multiply print(&#39;Multiplying&#39;) print(a * b) print() # Division print(&#39;Division&#39;) print(a / b) print() . . Adding Two Integers 22 Adding Two Strings Hello .. User Subtracting -2 Multiplying 120 Division 0.8333333333333334 . . Note: We could only do operations on the same data type. For example, Int variable and String variable could not be added (will raise an error). . a = 10 b = &#39;hello world&#39; print(a + b) . . TypeError Traceback (most recent call last) &lt;ipython-input-4-857b62d6dea8&gt; in &lt;module&gt; 2 a = 10 3 b = &#39;hello world&#39; -&gt; 4 print(a + b) TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39; . Data Structure . Data Structure is a collection of variables. Based on the method of collecting the varibles, the four basic data structure are presented in Python. . List | Tuple | Dictionary | Set | # Creat different Data Structure # list list_var = [1, 2, 3, 1, 2, 3] # tuple tuple_var = (1, 2, 3, 1, 2, 3) # dictionary dict_var = {&#39;a&#39;:1, &#39;b&#39;:2, &#39;c&#39;:3, &#39;d&#39;:1, &#39;e&#39;:2, &#39;f&#39;:3} # set set_var = {1, 2, 3, 1, 2, 3} print(&quot;List : &quot;, list_var) print(&quot;Tuple : &quot;, tuple_var) print(&quot;Dictionary : &quot;, dict_var) print(&quot;Set : &quot;, set_var) . . List : [1, 2, 3, 1, 2, 3] Tuple : (1, 2, 3, 1, 2, 3) Dictionary : {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 1, &#39;e&#39;: 2, &#39;f&#39;: 3} Set : {1, 2, 3, &#39;eh&#39;} . List . The most commonly used data structure in python because of the following properties. . Access element in Ordered | Mutable | Tuple . Access element in Ordered | Immutable | Dictionary . Unordered | Key-Value paired | Set . Unordered | Exclusive | Conditional Loop . if-else . for . while . Functions . Class . Reference .",
-            "url": "https://ytu-cvlab.github.io/Resource_Blog/image_processing/overview/2020/12/30/python-basic.html",
+            "url": "https://ytu-cvlab.github.io/Resource-Blog/image_processing/overview/2020/12/30/python-basic.html",
             "relUrl": "/image_processing/overview/2020/12/30/python-basic.html",
             "date": " • Dec 30, 2020"
         }
@@ -19,7 +19,7 @@
       ,"page1": {
           "title": "About Me",
           "content": ".",
-          "url": "https://ytu-cvlab.github.io/Resource_Blog/about/",
+          "url": "https://ytu-cvlab.github.io/Resource-Blog/about/",
           "relUrl": "/about/",
           "date": ""
       }
@@ -51,7 +51,7 @@
       ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
-          "url": "https://ytu-cvlab.github.io/Resource_Blog/robots.txt",
+          "url": "https://ytu-cvlab.github.io/Resource-Blog/robots.txt",
           "relUrl": "/robots.txt",
           "date": ""
       }
