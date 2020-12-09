@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Basic Python | All In One Computer Vision</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Basic Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python for Begineers" />
+<meta property="og:description" content="Python for Begineers" />
+<link rel="canonical" href="https://aungpaing98.github.io/Computer_Vision_Blog/image_processing/overview/2020/12/30/python-basic.html" />
+<meta property="og:url" content="https://aungpaing98.github.io/Computer_Vision_Blog/image_processing/overview/2020/12/30/python-basic.html" />
+<meta property="og:site_name" content="All In One Computer Vision" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-30T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://aungpaing98.github.io/Computer_Vision_Blog/image_processing/overview/2020/12/30/python-basic.html","@type":"BlogPosting","headline":"Basic Python","dateModified":"2020-12-30T00:00:00-06:00","datePublished":"2020-12-30T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://aungpaing98.github.io/Computer_Vision_Blog/image_processing/overview/2020/12/30/python-basic.html"},"description":"Python for Begineers","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Computer_Vision_Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aungpaing98.github.io/Computer_Vision_Blog/feed.xml" title="All In One Computer Vision" /><link rel="shortcut icon" type="image/x-icon" href="/Computer_Vision_Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Computer_Vision_Blog/">All In One Computer Vision</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Computer_Vision_Blog/about/">About Me</a><a class="page-link" href="/Computer_Vision_Blog/search/">Search</a><a class="page-link" href="/Computer_Vision_Blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Basic Python</h1><p class="page-description">Python for Begineers</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-30T00:00:00-06:00" itemprop="datePublished">
+        Dec 30, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Computer_Vision_Blog/categories/#image_processing">image_processing</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/Computer_Vision_Blog/categories/#overview">overview</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Learning-Tip">Learning Tip </a></li>
+<li class="toc-entry toc-h1"><a href="#Data-Type">Data Type </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#String">String </a></li>
+<li class="toc-entry toc-h2"><a href="#Int">Int </a></li>
+<li class="toc-entry toc-h2"><a href="#Float">Float </a></li>
+<li class="toc-entry toc-h2"><a href="#Boolean">Boolean </a></li>
+<li class="toc-entry toc-h2"><a href="#Operations-on-Data-Type">Operations on Data Type </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Data-Structure">Data Structure </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#List">List </a></li>
+<li class="toc-entry toc-h2"><a href="#Tuple">Tuple </a></li>
+<li class="toc-entry toc-h2"><a href="#Dictionary">Dictionary </a></li>
+<li class="toc-entry toc-h2"><a href="#Set">Set </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Conditional-Loop">Conditional Loop </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#if-else">if-else </a></li>
+<li class="toc-entry toc-h2"><a href="#for">for </a></li>
+<li class="toc-entry toc-h2"><a href="#while">while </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Functions">Functions </a></li>
+<li class="toc-entry toc-h1"><a href="#Class">Class </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-30-python-basic.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Learning-Tip">
+<a class="anchor" href="#Learning-Tip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Tip<a class="anchor-link" href="#Learning-Tip"> </a>
+</h1>
+<p>We Strongly recommand learning with playing.<br>
+We provide the notebook for student to get started.<br>
+And if you ever get trouble with learning, please feel free to reach out to us.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-Type">
+<a class="anchor" href="#Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Type<a class="anchor-link" href="#Data-Type"> </a>
+</h1>
+<p><strong>Data Type</strong> of a variable describe the properties that variable hold.<br>
+There are four basic Data Type in Python:</p>
+<ol>
+<li>Int</li>
+<li>Float</li>
+<li>String</li>
+<li>Boolean</li>
+</ol>
+<p>For example, <code>"Hello World"</code> is a <strong>String</strong> data type. We could use  <strong>String</strong> to print the output for user to see.<br>
+For calculation, we could use <strong>Int</strong> and <strong>Float</strong> data type.
+eg.</p>
+<div class="highlight"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span>
+</pre></div>
+
+<pre><code>8</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="String">
+<a class="anchor" href="#String" aria-hidden="true"><span class="octicon octicon-link"></span></a>String<a class="anchor-link" href="#String"> </a>
+</h2>
+<p>a = "hello world"
+print(type(a))
+print(a)
+print()</p>
+<h2 id="Int">
+<a class="anchor" href="#Int" aria-hidden="true"><span class="octicon octicon-link"></span></a>Int<a class="anchor-link" href="#Int"> </a>
+</h2>
+<p>a = 10
+print(type(a))
+print(a)
+print()</p>
+<h2 id="Float">
+<a class="anchor" href="#Float" aria-hidden="true"><span class="octicon octicon-link"></span></a>Float<a class="anchor-link" href="#Float"> </a>
+</h2>
+<p>a = 10.0
+print(type(a))
+print(a)
+print()</p>
+<h2 id="Boolean">
+<a class="anchor" href="#Boolean" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boolean<a class="anchor-link" href="#Boolean"> </a>
+</h2>
+<p>a = True
+print(type(a))
+print(a)
+print()</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Operations-on-Data-Type">
+<a class="anchor" href="#Operations-on-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operations on Data Type<a class="anchor-link" href="#Operations-on-Data-Type"> </a>
+</h2>
+<p>There are many built-in, already implemented, operations we could do in python.<br>
+Like, for example, for arithemetic operations:</p>
+<ol>
+<li>Addition (+)</li>
+<li>Subtraction (-)</li>
+<li>Multiplication (*)</li>
+<li>Division (/)</li>
+</ol>
+<p>Arithemetic operations, as the name suggest, can only be used in <strong>Int</strong> and <strong>Float</strong> Data Type.</p>
+<p>For two <strong>String</strong> data type are added, it will just connect the two values.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">astring</span> <span class="o">=</span> <span class="s2">"Hello ."</span>
+<span class="n">bstring</span> <span class="o">=</span> <span class="s2">". User"</span>
+
+<span class="c1"># Add</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Adding Two Integers'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Adding Two Strings'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">astring</span> <span class="o">+</span> <span class="n">bstring</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Subtract</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Subtracting'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Multiply</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Multiplying'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># Division</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Division'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Adding Two Integers
+22
+
+Adding Two Strings
+Hello .. User
+
+Subtracting
+-2
+
+Multiplying
+120
+
+Division
+0.8333333333333334
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>We could only do operations on the same data type.
+</div>
+For example, <strong>Int</strong> variable and <strong>String</strong> variable could not be added (will raise an <em>error</em>).
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-857b62d6dea8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> b <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">'hello world'</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>a <span class="ansi-blue-fg">+</span> b<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: 'int' and 'str'</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-Structure">
+<a class="anchor" href="#Data-Structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structure<a class="anchor-link" href="#Data-Structure"> </a>
+</h1>
+<p>Data Structure is a collection of variables.<br>
+Based on the method of collecting the varibles, the four basic data structure are presented in Python.</p>
+<ol>
+<li>List</li>
+<li>Tuple</li>
+<li>Dictionary</li>
+<li>Set</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creat different Data Structure</span>
+
+<span class="c1"># list</span>
+<span class="n">list_var</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="c1"># tuple</span>
+<span class="n">tuple_var</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># dictionary</span>
+<span class="n">dict_var</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="c1"># set</span>
+<span class="n">set_var</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"List : "</span><span class="p">,</span> <span class="n">list_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tuple : "</span><span class="p">,</span> <span class="n">tuple_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dictionary : "</span><span class="p">,</span> <span class="n">dict_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Set : "</span><span class="p">,</span> <span class="n">set_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List :  [1, 2, 3, 1, 2, 3]
+Tuple :  (1, 2, 3, 1, 2, 3)
+Dictionary :  {'a': 1, 'b': 2, 'c': 3, 'd': 1, 'e': 2, 'f': 3}
+Set :  {1, 2, 3, 'eh'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="List">
+<a class="anchor" href="#List" aria-hidden="true"><span class="octicon octicon-link"></span></a>List<a class="anchor-link" href="#List"> </a>
+</h2>
+<p>The most commonly used data structure in python because of the following properties.<br></p>
+<ol>
+<li>Access element in Ordered</li>
+<li>Mutable</li>
+</ol>
+<h2 id="Tuple">
+<a class="anchor" href="#Tuple" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tuple<a class="anchor-link" href="#Tuple"> </a>
+</h2>
+<ol>
+<li>Access element in Ordered</li>
+<li>Immutable</li>
+</ol>
+<h2 id="Dictionary">
+<a class="anchor" href="#Dictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionary<a class="anchor-link" href="#Dictionary"> </a>
+</h2>
+<ol>
+<li>Unordered</li>
+<li>Key-Value paired</li>
+</ol>
+<h2 id="Set">
+<a class="anchor" href="#Set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set<a class="anchor-link" href="#Set"> </a>
+</h2>
+<ol>
+<li>Unordered</li>
+<li>Exclusive</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditional-Loop">
+<a class="anchor" href="#Conditional-Loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Loop<a class="anchor-link" href="#Conditional-Loop"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="if-else">
+<a class="anchor" href="#if-else" aria-hidden="true"><span class="octicon octicon-link"></span></a>if-else<a class="anchor-link" href="#if-else"> </a>
+</h2>
+<h2 id="for">
+<a class="anchor" href="#for" aria-hidden="true"><span class="octicon octicon-link"></span></a>for<a class="anchor-link" href="#for"> </a>
+</h2>
+<h2 id="while">
+<a class="anchor" href="#while" aria-hidden="true"><span class="octicon octicon-link"></span></a>while<a class="anchor-link" href="#while"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Functions">
+<a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Class">
+<a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://python.swaroopch.com/data_structures.html">Reference</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="aungpaing98/Computer_Vision_Blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Computer_Vision_Blog/image_processing/overview/2020/12/30/python-basic.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Computer_Vision_Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Computer_Vision_Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Computer_Vision_Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/aungpaing98" title="aungpaing98"><svg class="svg-icon grey"><use xlink:href="/Computer_Vision_Blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel%2FUC6Vhf_yoIWXiLLJqTrU0FWA" title="channel/UC6Vhf_yoIWXiLLJqTrU0FWA"><svg class="svg-icon grey"><use xlink:href="/Computer_Vision_Blog/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
