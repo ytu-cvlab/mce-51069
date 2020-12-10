@@ -8,7 +8,7 @@
 ---
 # This Blog is built with [fastpages](https://github.com/fastai/fastpages)
 ---
-## Introduction to the course
+## Introduction
 This blog site exists for the purpose as the supplementary for the course : **Study Artificial Intelligence from Theory-oriented to Practical Approcah**. <br>The course is conducted for those who are **interested** and **passionate** about the Artificial Intelligence and Computer Vision.
 
 
