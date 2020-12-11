@@ -6,11 +6,10 @@
 
 # https://ytu-cvlab.github.io/Resource-Blog/
 ---
-# This Blog is built with [fastpages](https://github.com/fastai/fastpages)
+# This website is built with [fastpages](https://github.com/fastai/fastpages)
 ---
 ## Introduction
-This blog site exists for the purpose as the supplementary for the course : **Study Artificial Intelligence from Theory-oriented to Practical Approcah**. <br>The course is conducted for those who are **interested** and **passionate** about the Artificial Intelligence and Computer Vision.
-
+This website exists for the purpose as the supplementary for the McE-51069 course: **Study Artificial Intelligence from Theory-oriented to Practical Approcah**. The course is conducted for those who are **interested** in and **passionate** about Artificial Intelligence and Computer Vision.
 
 ## Instructor and Teaching Assistants
 ![](images/profile.jpeg)

@@ -1,1 +1,1 @@
-Sitemap: https://ytu-cvlab.github.io/Resource-Blog/sitemap.xml
+Sitemap: https://ytu-cvlab.github.io/mce51069/sitemap.xml
