@@ -4,7 +4,7 @@
         "post0": {
             "title": "Week 1, Day 1 (Introduction to the course)",
             "content": "Anaconda and Jupyter Notebook . Anaconda Installation on Windows . . Anaconda Installation on Mac . . How to use Jupyter Notebook . . Student ID and Attendance . Please fill out this form from this link to get your student ID. . We will record attendance in every session with google forms provided only in zoom chat. . Assignment . Please submit your week 1 assignments from this link. We will return your assignment scores after the deadline day (you can check on your submission form). Please note that we will return your final grade only if you submit all the assignments. .",
-            "url": "https://ytu-cvlab.github.io/Resource-Blog/assignment/installation_guide/student_id/2020/12/14/week1-day1.html",
+            "url": "https://ytu-cvlab.github.io/mce-51069/assignment/installation_guide/student_id/2020/12/14/week1-day1.html",
             "relUrl": "/assignment/installation_guide/student_id/2020/12/14/week1-day1.html",
             "date": " • Dec 14, 2020"
         }
@@ -15,7 +15,7 @@
         ,"post1": {
             "title": "Week 1, Day 2 (Python for Data Science)",
             "content": "Learning Tips . We Strongly recommand learning with playing. We provide notebooks for students to get started. If you get trouble with learning, please feel free to reach out to us facebook, email. . Data Type . Data Type of a variable describe the properties that variable hold. There are four basic Data Type in Python: . Int | Float | String | Boolean | For example, &quot;Hello World&quot; is a String data type. We could use String to print the output for user to see. For calculation, we could use Int and Float data type. eg. . num1 = 3 num2 = 5 print(num1 + num2) . 8 . String . a = &quot;hello world&quot; print(type(a)) print(a) print() . Int . a = 10 print(type(a)) print(a) print() . Float . a = 10.0 print(type(a)) print(a) print() . Boolean . a = True print(type(a)) print(a) print() . Operations on Data Type . There are many built-in, already implemented, operations we could do in python. Like, for example, for arithemetic operations: . Addition (+) | Subtraction (-) | Multiplication (*) | Division (/) | Arithemetic operations, as the name suggest, can only be used in Int and Float Data Type. . For two String data type are added, it will just connect the two values. . a = 10 b = 12 astring = &quot;Hello .&quot; bstring = &quot;. User&quot; # Add print(&#39;Adding Two Integers&#39;) print(a + b) print() print(&#39;Adding Two Strings&#39;) print(astring + bstring) print() # Subtract print(&#39;Subtracting&#39;) print(a - b) print() # Multiply print(&#39;Multiplying&#39;) print(a * b) print() # Division print(&#39;Division&#39;) print(a / b) print() . . Adding Two Integers 22 Adding Two Strings Hello .. User Subtracting -2 Multiplying 120 Division 0.8333333333333334 . . Note: We could only do operations on the same data type. For example, Int variable and String variable could not be added (will raise an error). . a = 10 b = &#39;hello world&#39; print(a + b) . . TypeError Traceback (most recent call last) &lt;ipython-input-4-857b62d6dea8&gt; in &lt;module&gt; 2 a = 10 3 b = &#39;hello world&#39; -&gt; 4 print(a + b) TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39; . Data Structure . Data Structure is a collection of variables. Based on the method of collecting the varibles, the four basic data structure are presented in Python. . List | Tuple | Dictionary | Set | # Creat different Data Structure # list list_var = [1, 2, 3, 1, 2, 3] # tuple tuple_var = (1, 2, 3, 1, 2, 3) # dictionary dict_var = {&#39;a&#39;:1, &#39;b&#39;:2, &#39;c&#39;:3, &#39;d&#39;:1, &#39;e&#39;:2, &#39;f&#39;:3} # set set_var = {1, 2, 3, 1, 2, 3} print(&quot;List : &quot;, list_var) print(&quot;Tuple : &quot;, tuple_var) print(&quot;Dictionary : &quot;, dict_var) print(&quot;Set : &quot;, set_var) . . List : [1, 2, 3, 1, 2, 3] Tuple : (1, 2, 3, 1, 2, 3) Dictionary : {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 1, &#39;e&#39;: 2, &#39;f&#39;: 3} Set : {1, 2, 3, &#39;eh&#39;} . List . The most commonly used data structure in python because of the following properties. . Access element in Ordered | Mutable | Tuple . Access element in Ordered | Immutable | Dictionary . Unordered | Key-Value paired | Set . Unordered | Exclusive | Conditional Loop . if-else . for . while . Functions . Class . Reference .",
-            "url": "https://ytu-cvlab.github.io/Resource-Blog/python/2020/12/13/week1-day2.html",
+            "url": "https://ytu-cvlab.github.io/mce-51069/python/2020/12/13/week1-day2.html",
             "relUrl": "/python/2020/12/13/week1-day2.html",
             "date": " • Dec 13, 2020"
         }
@@ -26,7 +26,7 @@
         ,"post2": {
             "title": "Week 1, Day 3 (Introduction to Image Processing in Python)",
             "content": "Numpy . Matplotlib . Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. . matplotlib - https://matplotlib.org/ . matplotlib.pyplot - https://matplotlib.org/api/pyplot_api.html . 1. Simple Plots . https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.plot.html . 2. Using Subplots . https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.subplots.html . 3. Scatter plots . https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.scatter.html . 4. Histograms . https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.hist.html . OpenCV . OpenCV (Open Source Computer Vision Library: http://opencv.org) is an open-source library that includes several hundreds of computer vision algorithms. . https://docs.opencv.org/master/index.html . 1. Reading &amp; Writing Images . Basic Functions . cv2.imread(path,flag) . cv2.imshow(&#39;title&#39;,image) . cv2.waitKey(sec) . cv2.destroyAllWindows() . cv2.imwrite(&#39;filename&#39;,image) . source - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_gui/py_image_display/py_image_display.html . 2. Drawing shapes . cv2.line(image, start_point, end_point, color, thickness) . cv2.cvtColor(src,method) . cv2.rectangle(image, start_point, end_point, color, thickness) . cv2.circle(image, center_coordinates, radius, color, thickness) . cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]]) . sources - . https://www.geeksforgeeks.org/ . https://docs.opencv.org/master/d6/d6e/group__imgproc__draw.html . 3. Face Detection with HaarCascade Detector . cv2.CascadeClassifier(filename) . cv2.CascadeClassifier.detectMultiScale( image,objects,scaleFactor,minNeighbors,flags,minSize,maxSize) . https://docs.opencv.org/3.4/d1/de5/classcv_1_1CascadeClassifier.html . https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html . 4. Resizing images . cv2.resize(input,(size_x,size_y),fx,fy,interpolation) . https://docs.opencv.org/master/da/d6e/tutorial_py_geometric_transformations.html . 5. Splitting &amp; Merging images . b,g,r = cv2.split(color_image) . image = cv2.merge((r,g,b)) . https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_core/py_basic_ops/py_basic_ops.html . 6. Image translation &amp; rotation . cv2.warpAffine(image, M, output_size, flags, borderMode, borderValue) . cv2.getRotationMatrix2D(center, angle, scale) . https://docs.opencv.org/3.4/d4/d61/tutorial_warp_affine.html . https://www.programcreek.com/python/example/89459/cv2.getRotationMatrix2D . https://docs.opencv.org/3.4/da/d54/group__imgproc__transform.html .",
-            "url": "https://ytu-cvlab.github.io/Resource-Blog/image_processing/overview/2020/12/12/week1-day3.html",
+            "url": "https://ytu-cvlab.github.io/mce-51069/image_processing/overview/2020/12/12/week1-day3.html",
             "relUrl": "/image_processing/overview/2020/12/12/week1-day3.html",
             "date": " • Dec 12, 2020"
         }
@@ -41,7 +41,7 @@
       ,"page1": {
           "title": "About Me",
           "content": ". This Lecture is Conducted by: Dr.Theint Theint Thu Aung Paing Aw Thura Phone Thiha Kyaw .",
-          "url": "https://ytu-cvlab.github.io/Resource-Blog/about/",
+          "url": "https://ytu-cvlab.github.io/mce-51069/about/",
           "relUrl": "/about/",
           "date": ""
       }
@@ -73,7 +73,7 @@
       ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
-          "url": "https://ytu-cvlab.github.io/Resource-Blog/robots.txt",
+          "url": "https://ytu-cvlab.github.io/mce-51069/robots.txt",
           "relUrl": "/robots.txt",
           "date": ""
       }
