@@ -10,7 +10,7 @@ title: To Home
 description: A collection of Resource blog posts for the Tutorials.
 github_username: ytu-cvlab
 # you can comment the below line out if your repo name is not different than your baseurl
-github_repo: "Resource-Blog"
+github_repo: "mce-51069"
 
 # OPTIONAL: override baseurl and url if using a custom domain
 # Note: leave out the trailing / from this value.
@@ -34,7 +34,7 @@ url: "https://ytu-cvlab.github.io" # the base hostname & protocol for your site,
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/Resource-Blog" # the subpath of your site, e.g. "/blog".
+baseurl: "/mce-51069" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
