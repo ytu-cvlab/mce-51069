@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Week 1, Day 2 (Python for Data Science) | McE-51069</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Week 1, Day 2 (Python for Data Science)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to second day (Week 1) of the McE-51069 course. We will introduce the basics of Python programming language and share you necessary lectures and assignment notebooks." />
+<meta property="og:description" content="Welcome to second day (Week 1) of the McE-51069 course. We will introduce the basics of Python programming language and share you necessary lectures and assignment notebooks." />
+<link rel="canonical" href="https://ytu-cvlab.github.io/mce-51069/python/2020/12/14/week1-day2.html" />
+<meta property="og:url" content="https://ytu-cvlab.github.io/mce-51069/python/2020/12/14/week1-day2.html" />
+<meta property="og:site_name" content="McE-51069" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-14T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://ytu-cvlab.github.io/mce-51069/python/2020/12/14/week1-day2.html","@type":"BlogPosting","headline":"Week 1, Day 2 (Python for Data Science)","dateModified":"2020-12-14T00:00:00-06:00","datePublished":"2020-12-14T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ytu-cvlab.github.io/mce-51069/python/2020/12/14/week1-day2.html"},"description":"Welcome to second day (Week 1) of the McE-51069 course. We will introduce the basics of Python programming language and share you necessary lectures and assignment notebooks.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/mce-51069/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ytu-cvlab.github.io/mce-51069/feed.xml" title="McE-51069" /><link rel="shortcut icon" type="image/x-icon" href="/mce-51069/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/mce-51069/">McE-51069</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/mce-51069/about/">About Us</a><a class="page-link" href="/mce-51069/search/">Search</a><a class="page-link" href="/mce-51069/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Week 1, Day 2 (Python for Data Science)</h1><p class="page-description">Welcome to second day (Week 1) of the McE-51069 course. We will introduce the basics of Python programming language and share you necessary lectures and assignment notebooks.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-14T00:00:00-06:00" itemprop="datePublished">
+        Dec 14, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/mce-51069/categories/#python">python</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Learning-Tips">Learning Tips </a></li>
+<li class="toc-entry toc-h1"><a href="#Data-Type">Data Type </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Operations-on-Data-Type">Operations on Data Type </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Arithmetic-Operation-on-Number-Data-Type">Arithmetic Operation on Number Data Type </a></li>
+<li class="toc-entry toc-h3"><a href="#String-Operation">String Operation </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Data-Structure">Data Structure </a></li>
+<li class="toc-entry toc-h1"><a href="#List">List </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Access-with-Index">Access with Index </a></li>
+<li class="toc-entry toc-h2"><a href="#Access-with-Iteration(For-Loop)">Access with Iteration(For Loop) </a></li>
+<li class="toc-entry toc-h2"><a href="#List-with-different-Datatype">List with different Datatype </a></li>
+<li class="toc-entry toc-h2"><a href="#Dictionary">Dictionary </a></li>
+<li class="toc-entry toc-h2"><a href="#Tuple">Tuple </a></li>
+<li class="toc-entry toc-h2"><a href="#Set">Set </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Conditional-&-Loop-in-Python">Conditional &amp; Loop in Python </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Conditional">Conditional </a></li>
+<li class="toc-entry toc-h2"><a href="#Loop">Loop </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Functions">Functions </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Built-in-Functions">Built-in Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#User-Defined-Functions">User-Defined Functions </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Class">Class </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Built-in-Class">Built-in Class </a></li>
+<li class="toc-entry toc-h2"><a href="#User-Defined-Class">User-Defined Class </a></li>
+<li class="toc-entry toc-h2"><a href="#Inheritance">Inheritance </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-14-week1-day2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Learning-Tips">
+<a class="anchor" href="#Learning-Tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learning Tips<a class="anchor-link" href="#Learning-Tips"> </a>
+</h1>
+<p>We Strongly recommand learning with playing.<br>
+We provide notebooks for students to get started.<br>
+If you get trouble with learning, please feel free to reach out to us <a href="https://www.facebook.com/groups/467439787576222">facebook</a>, <a href="cvml.ytumc@gmail.com">email</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-Type">
+<a class="anchor" href="#Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Type<a class="anchor-link" href="#Data-Type"> </a>
+</h1>
+<p><strong>Data Type</strong> of a variable describe the properties that variable hold.<br>
+In python, there are some built-in data-type, which described below.</p>
+<ol>
+<li>Int (1 ,100, 99)</li>
+<li>Float (1.0, 3.14, 2.718)</li>
+<li>String ("Myanmar", "Burma")</li>
+<li>Boolean (True, False)</li>
+<li>Complex (1+0j)</li>
+<li>null (None)</li>
+</ol>
+<p>To describe the various properties in the real world, we must use different data type.</p>
+<p>eg.<br>If we want to describe a person's <code>name</code>, we would use <code>String</code>.<br>
+<br><code>Int</code> for his <code>age</code>, <br><code>Float</code> for his <code>height</code> in (cm), <br>and <code>Boolean</code> for his <code>is_graduated</code>, and so on.</p>
+<p>The main take away from this course is knowing the difference data type and their usage.</p>
+<p>We could create difference variables in following ways:<br></p>
+<div class="highlight"><pre><span></span><span class="c1"># Int</span>
+<span class="n">int1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">int2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Float</span>
+<span class="n">float1</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">float2</span> <span class="o">=</span> <span class="mf">3.14</span>
+
+<span class="c1"># String</span>
+<span class="n">string1</span> <span class="o">=</span> <span class="s2">"Hello"</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="s1">'World'</span>
+
+<span class="c1"># Boolean</span>
+<span class="n">bool1</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">bool2</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Operations-on-Data-Type">
+<a class="anchor" href="#Operations-on-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operations on Data Type<a class="anchor-link" href="#Operations-on-Data-Type"> </a>
+</h2>
+<h3 id="Arithmetic-Operation-on-Number-Data-Type">
+<a class="anchor" href="#Arithmetic-Operation-on-Number-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic Operation on Number Data Type<a class="anchor-link" href="#Arithmetic-Operation-on-Number-Data-Type"> </a>
+</h3>
+<p>There are many built-in, already implemented, operations we could do in python.<br>
+Like, for example, for arithmetic operations:</p>
+<ol>
+<li>Addition (+)</li>
+<li>Subtraction (-)</li>
+<li>Multiplication (*)</li>
+<li>Division (/)</li>
+</ol>
+<p>Arithemetic operations, as the name suggest, can only be used in <strong>Int</strong> and <strong>Float</strong> Data Type.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">int1</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">int2</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1"># We can add, subtract two elements of 'Int' dtype.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span> <span class="o">+</span> <span class="n">int2</span><span class="p">)</span> <span class="c1"># Addition</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span> <span class="o">-</span> <span class="n">int2</span><span class="p">)</span> <span class="c1"># Subtraction</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span> <span class="o">*</span> <span class="n">int2</span><span class="p">)</span> <span class="c1"># Multiplication</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span> <span class="o">/</span> <span class="n">int2</span><span class="p">)</span> <span class="c1"># Division</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span> <span class="o">%</span> <span class="n">int2</span><span class="p">)</span> <span class="c1"># Remainder</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span><span class="o">**</span><span class="n">int2</span><span class="p">)</span> <span class="c1"># Power</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="n">float1</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">float2</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="c1"># We can add, subtract two elements of 'Float' dtype.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">+</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">-</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">*</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">/</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span> <span class="o">%</span> <span class="n">float2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">float1</span><span class="o">**</span><span class="n">float2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8
+2
+15
+1.6666666666666667
+2
+125
+
+4.140000000000001
+-2.14
+3.14
+0.3184713375796178
+1.0
+1.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="String-Operation">
+<a class="anchor" href="#String-Operation" aria-hidden="true"><span class="octicon octicon-link"></span></a>String Operation<a class="anchor-link" href="#String-Operation"> </a>
+</h3>
+<p>for variable that is of <code>String</code> data type, we could <em>Concatenate</em> Two string,<br>
+Or we could use <code>f String</code> format for better formating of string.<br></p>
+<p>In <code>f String</code>, we could enter varibles in the string format.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Simple concatenate two string</span>
+<span class="n">concatenate_string</span> <span class="o">=</span> <span class="n">string1</span> <span class="o">+</span> <span class="n">string2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">concatenate_string</span><span class="p">)</span>
+
+<span class="c1"># F string format.</span>
+<span class="n">f_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Hello World, Welcome to the wanderland"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f_string</span><span class="p">)</span>
+
+<span class="n">f_string_var</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">string1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">string2</span><span class="si">}</span><span class="s2">, This is testing the f String"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f_string_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HelloWorld
+Hello World, Welcome to the wanderland
+Hello World, This is testing the f String
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>We could only do operations on the same data type.
+</div>
+For example, <strong>Int</strong> variable and <strong>String</strong> variable could not be added (will raise an <em>error</em>).
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-857b62d6dea8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> a <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> b <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">'hello world'</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>a <span class="ansi-blue-fg">+</span> b<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: 'int' and 'str'</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>TypeError :can only concatenate str to str | int to int</code></p>
+<p>Different data type cannot be added (concatenate) together.<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://docs.python.org/3/tutorial/introduction.html#numbers">Reference : Python Official Documentation</a></p>
+<p>We always recommand students to go check out the official document if possible.<br>
+It might be a bit hard at first, but it definetly worth the effort.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-Structure">
+<a class="anchor" href="#Data-Structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structure<a class="anchor-link" href="#Data-Structure"> </a>
+</h1>
+<p>Data Structure is a collection of variables.<br>
+Based on the method of collecting the varibles, the four basic data structure are presented in Python.</p>
+<ol>
+<li>List</li>
+<li>Tuple</li>
+<li>Dictionary</li>
+<li>Set</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Simple Creation of each four types of structures</span>
+
+<span class="n">list_obj</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">set_obj</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">tuple_obj</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">dict_obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">list_obj</span><span class="p">),</span> <span class="n">list_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">set_obj</span><span class="p">),</span> <span class="n">set_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tuple_obj</span><span class="p">),</span> <span class="n">tuple_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">dict_obj</span><span class="p">),</span> <span class="n">dict_obj</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'list'&gt; [1, 2, 3, 4, 1, 2, 3, 4]
+&lt;class 'set'&gt; {1, 2, 3, 4}
+&lt;class 'tuple'&gt; (1, 2, 3, 4, 1, 2, 3, 4)
+&lt;class 'dict'&gt; {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 1, 'f': 2}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="List">
+<a class="anchor" href="#List" aria-hidden="true"><span class="octicon octicon-link"></span></a>List<a class="anchor-link" href="#List"> </a>
+</h1>
+<p>The Most commonly used data structure in Python, <code>List</code> has the following properties :</p>
+<ol>
+<li>Element Accessable with ordered</li>
+<li>Mutable (variable value can be changed)</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_height</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">178</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Heights of student in class..."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_height</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Heights of student in class...
+[170, 172, 174, 160, 178]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Access-with-Index">
+<a class="anchor" href="#Access-with-Index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access with Index<a class="anchor-link" href="#Access-with-Index"> </a>
+</h2>
+<p><img src="/mce-51069/images/copied_from_nb/animations/index_animation.gif" alt="">
+</p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>If we access element that is out of range, it will rasie <code>IndexError</code> as follow
+</div>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Student A height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student B height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student A height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student B height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student A height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student B height : "</span><span class="p">,</span> <span class="n">list_height</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Student A height :  170
+Student B height :  172
+Student A height :  174
+Student B height :  160
+Student A height :  178
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-d5a3a372c0b9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Student B height : "</span><span class="ansi-blue-fg">,</span> list_height<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Student A height : "</span><span class="ansi-blue-fg">,</span> list_height<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">4</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"Student B height : "</span><span class="ansi-blue-fg">,</span> list_height<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">IndexError</span>: list index out of range</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>IndexError: list index out of range.</code><br>
+Because there are only 5 elements in list, <code>list_height[5]</code> request for 6th element, which is out of range.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Access-with-Iteration(For-Loop)">
+<a class="anchor" href="#Access-with-Iteration(For-Loop)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access with Iteration(For Loop)<a class="anchor-link" href="#Access-with-Iteration(For-Loop)"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_student</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">height</span> <span class="ow">in</span> <span class="n">list_height</span><span class="p">:</span>
+    <span class="n">num_student</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">','</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">There are total of </span><span class="si">{</span><span class="n">num_student</span><span class="si">}</span><span class="s2"> students in the class"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>170,172,174,160,178,
+There are total of 5 students in the class
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="List-with-different-Datatype">
+<a class="anchor" href="#List-with-different-Datatype" aria-hidden="true"><span class="octicon octicon-link"></span></a>List with different Datatype<a class="anchor-link" href="#List-with-different-Datatype"> </a>
+</h2>
+<p>We could store, not just one datatype, but variables with different data type in a list.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_A</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Aung Aung"</span><span class="p">,</span> <span class="s2">"McE"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">student_B</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Soe Pyae"</span><span class="p">,</span> <span class="s2">"Civil"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student A Info : "</span><span class="p">,</span> <span class="n">student_A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student B Info : "</span><span class="p">,</span> <span class="n">student_B</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Student A Info :  ['Aung_Paing', 'McE', 3, 6]
+Student B Info :  ['Soe_Pyae', 'Civil', 3, 6]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># But Be Aware, We do not know which element contain what information..</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_A</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">student_A</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">student_A</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">student_A</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>9
+Aung_PaingMcE
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-11-b71be46f223e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span>student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span>student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">+</span> student_A<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: can only concatenate str (not "int") to str</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>TypeError :can only concatenate str to str | int to int</code></p>
+<p>Different data type cannot be added (concatenate) together.<br>
+For that, in python, we use <code>Dictionary</code> to store information.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dictionary">
+<a class="anchor" href="#Dictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionary<a class="anchor-link" href="#Dictionary"> </a>
+</h2>
+<p>When we walk into a library and want to find a book, we search by the book title, the book author or may be the published year.<br>
+Python use the same idea to store value for the varible, by creating the key for that value.<br>
+That is why you often heard <code>dict</code> in python is key-value paired.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dictionary</span>
+<span class="n">student_A_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Aung_Paing"</span><span class="p">,</span>
+                 <span class="s2">"Major"</span> <span class="p">:</span> <span class="s2">"McE"</span><span class="p">,</span>
+                 <span class="s2">"Batch"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                 <span class="s2">"Year"</span> <span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+
+<span class="n">student_B_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Soe_Pyae"</span><span class="p">,</span>
+                 <span class="s2">"Major"</span> <span class="p">:</span> <span class="s2">"Civil"</span><span class="p">,</span>
+                 <span class="s2">"Batch"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                 <span class="s2">"Year"</span> <span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student_A_dict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_B_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'Name': 'Aung_Paing', 'Major': 'McE', 'Batch': 3, 'Year': 6}
+{'Name': 'Soe_Pyae', 'Major': 'Civil', 'Batch': 3, 'Year': 6}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># In Dict, we only need to specify the 'Key' to find the 'Value'.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Name : "</span><span class="p">,</span> <span class="n">student_A_dict</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Major : "</span><span class="p">,</span> <span class="n">student_A_dict</span><span class="p">[</span><span class="s2">"Major"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Batch : "</span><span class="p">,</span> <span class="n">student_A_dict</span><span class="p">[</span><span class="s2">"Batch"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Year : "</span><span class="p">,</span> <span class="n">student_A_dict</span><span class="p">[</span><span class="s2">"Year"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Name :  Aung_Paing
+Major :  McE
+Batch :  3
+Year :  6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tuple">
+<a class="anchor" href="#Tuple" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tuple<a class="anchor-link" href="#Tuple"> </a>
+</h2>
+<p>Sometimes, we need <strong>immutable</strong> data.<br>
+Like the <em>Coordinate</em> of a location, your lovely <em>Birthday Date</em>, his/her <em>Phone Number</em> or may be even your <em>gene code</em>.<br>
+These information, we want to access them, but not change them, are created with <code>Tuple</code>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">home_coordinate</span> <span class="o">=</span> <span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">456</span><span class="p">)</span>
+<span class="n">birthday</span> <span class="o">=</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1998</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">birthday</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'tuple'&gt;
+(11, 1, 1998)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let's try to access the month I was borned...</span>
+<span class="n">month</span> <span class="o">=</span> <span class="n">birthday</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+
+<span class="c1"># Let's try to change the day I was borned....</span>
+<span class="n">birthday</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-21-37b3c9f0dcce&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-red-fg"># Let's try to change the day I was borned....</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>birthday<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span>
+
+<span class="ansi-red-fg">TypeError</span>: 'tuple' object does not support item assignment</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Set">
+<a class="anchor" href="#Set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set<a class="anchor-link" href="#Set"> </a>
+</h2>
+<p><code>Set</code> as the name suggest, is a set of collection.<br>
+it does not care about the order of that collection, it does not even care how many elements are in that collection, it only cares about the representative in that collection.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">set_obj</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">set_obj</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_obj</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'set'&gt;
+{1, 2, 3, 4}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://docs.python.org/3/tutorial/introduction.html#lists">Reference : Python Official Documentation on Data Structure</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditional-&amp;-Loop-in-Python">
+<a class="anchor" href="#Conditional-&amp;-Loop-in-Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional &amp; Loop in Python<a class="anchor-link" href="#Conditional-&amp;-Loop-in-Python"> </a>
+</h1>
+<p>In a Program, there always exist logics.<br>
+Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</em>.<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conditional">
+<a class="anchor" href="#Conditional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional<a class="anchor-link" href="#Conditional"> </a>
+</h2>
+<p>In Python, such conditional are conducted by <code>if-else</code> statement.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Simple if-else case</span>
+<span class="n">rain</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">rain</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Today weather is fine, I am going out."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"It is raining, I cannot go out..."</span><span class="p">)</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Today weather is fine, I am going out.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loop">
+<a class="anchor" href="#Loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loop<a class="anchor-link" href="#Loop"> </a>
+</h2>
+<p>There are two main types of loop in python.</p>
+<ol>
+<li>for</li>
+<li>while</li>
+</ol>
+<p><code>For</code> iterate for the given range,<br>
+<code>While</code> check the condition and continue iteration until condition is False.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">range</span><span class="p">():</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+</pre></div>
+<p><a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">Reference : Python Official Document on if-else statement</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Functions">
+<a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
+</h1>
+<p>Functions are great arsenal in python.<br> You could think of <strong>functions</strong> as a factory, <code>process(do function)</code> the <code>raw inputs(Arguments)</code> to <code>Desired products(output)</code>.
+There are two types of functions in Python.</p>
+<ol>
+<li>
+<a href="#built_in">Built-in Function</a><br>
+<a href="https://docs.python.org/3/library/functions.html">Reference : Python Official</a>
+</li>
+<li>
+<a href="#user">User Defined Function</a><br>
+<a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Reference : Python Official</a>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="built_in"></a></p>
+<h2 id="Built-in-Functions">
+<a class="anchor" href="#Built-in-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Functions<a class="anchor-link" href="#Built-in-Functions"> </a>
+</h2>
+<p>Built-in Functions, come along with python, could be very useful when you need them.<br>
+Following are some examples for such case.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">int_obj</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int_obj</span><span class="p">)</span>
+
+<span class="c1"># Find the absolute value</span>
+<span class="n">abs_int</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">int_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">abs_int</span><span class="p">)</span>
+
+<span class="c1"># Convert Int to String</span>
+<span class="n">int2str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">int_obj</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int2str</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">int2str</span><span class="p">))</span>
+
+<span class="c1"># Check the datatype</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">int_obj</span><span class="p">,</span> <span class="nb">int</span><span class="p">))</span>
+
+<span class="c1"># Also, we could use built-in Functions to construct data-structures.</span>
+<span class="n">set_obj</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">set_obj</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-5
+5
+-5 &lt;class 'str'&gt;
+True
+{1, 2, 3}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="user"></a></p>
+<h2 id="User-Defined-Functions">
+<a class="anchor" href="#User-Defined-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>User-Defined Functions<a class="anchor-link" href="#User-Defined-Functions"> </a>
+</h2>
+<p>We could defind functions as we would like the program to process.<br>
+Typical function in python consists of following parts.</p>
+<p><img src="/mce-51069/images/copied_from_nb/animations/function.jpeg" alt=""></p>
+<p>When Constructing a function, what you, the developer, need to know are:</p>
+<ol>
+<li>Input (Arguments in functions)</li>
+<li>Process (What this function do)</li>
+<li>Output(What this function output)</li>
+</ol>
+<p>In short, <code>IPO</code> for making a function.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Make a power calculator with function</span>
+<span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">base_num</span><span class="p">,</span> <span class="n">pow_num</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Calculate the power of base_num</span>
+<span class="sd">    Args:</span>
+<span class="sd">        base_num(Int) -&gt; Base number for calculation</span>
+<span class="sd">        pow_num(Int) -&gt; Power number for calculation</span>
+<span class="sd">    Return:</span>
+<span class="sd">        power_num(Int) -&gt; Power number for calculation </span>
+<span class="sd">    """</span>
+    
+    <span class="k">return</span> <span class="n">base_num</span> <span class="o">**</span> <span class="n">pow_num</span>
+
+
+<span class="c1"># We could directly print out the value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Or we could assign that value to a varible and print.</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Class">
+<a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
+</h1>
+<ol>
+<li><a href="#built_in_">Built-in Class</a></li>
+<li>
+<a href="#user_">User Defined</a><ul>
+<li>Inheritance</li>
+</ul>
+</li>
+</ol>
+<p>Class in python acts like a template.<br>
+eg. When we think of a person, <br>
+he has <code>properties</code> of [<em>Name</em>, <em>Age</em>, <em>Position</em>, <em>Hobby</em>] and so on.<br>
+These properties can be applied to every one who is a person.</p>
+<p>So, we create a template 'Class' and then, create <em>objects</em>, one person each for that class.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="built_in_"></a></p>
+<h2 id="Built-in-Class">
+<a class="anchor" href="#Built-in-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Class<a class="anchor-link" href="#Built-in-Class"> </a>
+</h2>
+<p>There are already many built-in classes that come with python.</p>
+<div class="highlight"><pre><span></span><span class="n">int_obj</span> <span class="o">=</span> <span class="nb">int</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">int_obj</span><span class="p">))</span>
+
+<span class="n">bool_obj</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bool_obj</span><span class="p">))</span>
+</pre></div>
+
+<pre><code>&lt;class 'int'&gt;
+&lt;class 'bool'&gt;</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a id="user"></a></p>
+<h2 id="User-Defined-Class">
+<a class="anchor" href="#User-Defined-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>User-Defined Class<a class="anchor-link" href="#User-Defined-Class"> </a>
+</h2>
+<p>We could create a class for our own need. Assign properties and methods to that class</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inheritance">
+<a class="anchor" href="#Inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance<a class="anchor-link" href="#Inheritance"> </a>
+</h2>
+<p>We could create another class, which has all <strong>attributes</strong> and <strong>methods</strong> as Student, but it also has other <strong>attributes</strong> and <strong>methods</strong>.<br>
+We call that inheritance</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/mce-51069/python/2020/12/14/week1-day2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/mce-51069/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/mce-51069/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/mce-51069/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Study Artificial Intelligence from Theory-oriented to Practical Approach</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
