@@ -39,7 +39,8 @@ baseurl: "/mce-51069" # the subpath of your site, e.g. "/blog".
 # Github and twitter are optional:
 minima:
   social_links:
-    # youtube: channel/UC6Vhf_yoIWXiLLJqTrU0FWA
+    youtube: https://www.youtube.com/channel/UCDFhKEbfpxKXVk4Mryh7yhA
+    facebook: https://www.facebook.com/groups/467439787576222
     # github: aungpaing98
 
 # Set this to true to get LaTeX math equation support
