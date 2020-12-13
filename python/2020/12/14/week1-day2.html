@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      15 min read
     
 </span></p>
 
@@ -117,18 +117,21 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Operations-on-Data-Type">Operations on Data Type </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Arithmetic-Operation-on-Number-Data-Type">Arithmetic Operation on Number Data Type </a></li>
+<li class="toc-entry toc-h3"><a href="#Arithmetic-Operations-on-Number-Data-Type">Arithmetic Operations on Number Data Type </a></li>
 <li class="toc-entry toc-h3"><a href="#String-Operation">String Operation </a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Data-Structure">Data Structure </a></li>
-<li class="toc-entry toc-h1"><a href="#List">List </a>
+<li class="toc-entry toc-h1"><a href="#Data-Structure">Data Structure </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Access-with-Index">Access with Index </a></li>
-<li class="toc-entry toc-h2"><a href="#Access-with-Iteration(For-Loop)">Access with Iteration(For Loop) </a></li>
-<li class="toc-entry toc-h2"><a href="#List-with-different-Datatype">List with different Datatype </a></li>
+<li class="toc-entry toc-h2"><a href="#List">List </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Access-with-Index">Access with Index </a></li>
+<li class="toc-entry toc-h3"><a href="#Access-with-iteration-(For-Loop)">Access with iteration (For Loop) </a></li>
+<li class="toc-entry toc-h3"><a href="#List-with-different-Datatype">List with different Datatype </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Dictionary">Dictionary </a></li>
 <li class="toc-entry toc-h2"><a href="#Tuple">Tuple </a></li>
 <li class="toc-entry toc-h2"><a href="#Set">Set </a></li>
@@ -146,11 +149,22 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#User-Defined-Functions">User-Defined Functions </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Class">Class </a>
+<li class="toc-entry toc-h1"><a href="#Classes">Classes </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Built-in-Class">Built-in Class </a></li>
-<li class="toc-entry toc-h2"><a href="#User-Defined-Class">User-Defined Class </a></li>
+<li class="toc-entry toc-h2"><a href="#Intro-to-OOP">Intro to OOP </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Objects">Objects </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Class-and-Attributes">Class and Attributes </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#class">class </a></li>
+<li class="toc-entry toc-h3"><a href="#Attributes">Attributes </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Methods">Methods </a></li>
 <li class="toc-entry toc-h2"><a href="#Inheritance">Inheritance </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
 </ul>
 </li>
 </ul><!--
@@ -206,7 +220,7 @@ In python, there are built-in data-types, some of which are described below:</p>
 </ol>
 <p>To describe the various properties in the real world, we must use different data type.</p>
 <p>eg.<br>If we want to describe a person's <code>name</code>, we would use <code>String</code>.<br>
-<br><code>Int</code> for his <code>age</code>, <br><code>Float</code> for his <code>height</code> in (cm), <br>and <code>Boolean</code> for his <code>is_graduated</code>, and so on.</p>
+<br><code>Int</code> for his/her <code>age</code>, <br><code>Float</code> for his/her <code>height</code> in (cm), <br>and <code>Boolean</code> for he/she <code>is_graduated</code>, and so on.</p>
 <p>The main take away from this course is knowing the difference data type and their usage.</p>
 <p>We could create difference variables in following ways:<br></p>
 <div class="highlight"><pre><span></span><span class="c1"># Int</span>
@@ -224,7 +238,12 @@ In python, there are built-in data-types, some of which are described below:</p>
 <span class="c1"># Boolean</span>
 <span class="n">bool1</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">bool2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">int1</span><span class="p">)</span>
 </pre></div>
+
+<pre><code>5</code></pre>
+<p><code>print</code> function is used to print the values of the variable to the output screen.</p>
 
 </div>
 </div>
@@ -235,18 +254,17 @@ In python, there are built-in data-types, some of which are described below:</p>
 <h2 id="Operations-on-Data-Type">
 <a class="anchor" href="#Operations-on-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operations on Data Type<a class="anchor-link" href="#Operations-on-Data-Type"> </a>
 </h2>
-<h3 id="Arithmetic-Operation-on-Number-Data-Type">
-<a class="anchor" href="#Arithmetic-Operation-on-Number-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic Operation on Number Data Type<a class="anchor-link" href="#Arithmetic-Operation-on-Number-Data-Type"> </a>
+<h3 id="Arithmetic-Operations-on-Number-Data-Type">
+<a class="anchor" href="#Arithmetic-Operations-on-Number-Data-Type" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arithmetic Operations on Number Data Type<a class="anchor-link" href="#Arithmetic-Operations-on-Number-Data-Type"> </a>
 </h3>
-<p>There are many built-in, already implemented, operations we could do in python.<br>
-Like, for example, for arithmetic operations:</p>
-<ol>
+<p>Simple Arithmetic Operations such as:</p>
+<ul>
 <li>Addition (+)</li>
 <li>Subtraction (-)</li>
 <li>Multiplication (*)</li>
 <li>Division (/)</li>
-</ol>
-<p>Arithemetic operations, as the name suggest, can only be used in <strong>Int</strong> and <strong>Float</strong> Data Type.</p>
+</ul>
+<p>can be done on Number Data Types (<strong>Int</strong> and <strong>Float</strong>) as shown Below.</p>
 
 </div>
 </div>
@@ -323,9 +341,9 @@ Like, for example, for arithmetic operations:</p>
 <h3 id="String-Operation">
 <a class="anchor" href="#String-Operation" aria-hidden="true"><span class="octicon octicon-link"></span></a>String Operation<a class="anchor-link" href="#String-Operation"> </a>
 </h3>
-<p>for variable that is of <code>String</code> data type, we could <em>Concatenate</em> Two string,<br>
-Or we could use <code>f String</code> format for better formating of string.<br></p>
-<p>In <code>f String</code>, we could enter varibles in the string format.</p>
+<p>For variable that is of <code>String</code> data type, we could <em>Concatenate</em> Two string,<br>
+We could also use <code>f-Strings</code> format for better formating of strings.<br></p>
+<p>In <code>f-Strings</code>, we could enter varibles in the string format.</p>
 
 </div>
 </div>
@@ -340,7 +358,10 @@ Or we could use <code>f String</code> format for better formating of string.<br>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Simple concatenate two string</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s2">"Hello"</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="s2">"World"</span>
+
+<span class="c1"># Simple concatenate two string</span>
 <span class="n">concatenate_string</span> <span class="o">=</span> <span class="n">string1</span> <span class="o">+</span> <span class="n">string2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">concatenate_string</span><span class="p">)</span>
 
@@ -348,7 +369,7 @@ Or we could use <code>f String</code> format for better formating of string.<br>
 <span class="n">f_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Hello World, Welcome to the wanderland"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f_string</span><span class="p">)</span>
 
-<span class="n">f_string_var</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">string1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">string2</span><span class="si">}</span><span class="s2">, This is testing the f String"</span>
+<span class="n">f_string_var</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">string1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">string2</span><span class="si">}</span><span class="s2">, This is testing the f-Strings"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f_string_var</span><span class="p">)</span>
 </pre></div>
 
@@ -365,7 +386,7 @@ Or we could use <code>f String</code> format for better formating of string.<br>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>HelloWorld
 Hello World, Welcome to the wanderland
-Hello World, This is testing the f String
+Hello World, This is testing the f-Strings
 </pre>
 </div>
 </div>
@@ -437,7 +458,7 @@ For example, <strong>Int</strong> variable and <strong>String</strong> variable 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>TypeError :can only concatenate str to str | int to int</code></p>
-<p>Different data type cannot be added (concatenate) together.<br></p>
+<p>Different Data Types cannot be added (concatenate) together.<br></p>
 
 </div>
 </div>
@@ -445,9 +466,9 @@ For example, <strong>Int</strong> variable and <strong>String</strong> variable 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://docs.python.org/3/tutorial/introduction.html#numbers">Reference : Python Official Documentation</a></p>
-<p>We always recommand students to go check out the official document if possible.<br>
-It might be a bit hard at first, but it definetly worth the effort.</p>
+<p>If you would like to learn more about data types and their operations in python, please visit to the official Python <a href="https://docs.python.org/3/tutorial/introduction.html#numbers">documentation</a>.</p>
+<hr>
+<p>We always encourage students to check out the documents, because that is the most informative way of learning.</p>
 
 </div>
 </div>
@@ -459,7 +480,7 @@ It might be a bit hard at first, but it definetly worth the effort.</p>
 <a class="anchor" href="#Data-Structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structure<a class="anchor-link" href="#Data-Structure"> </a>
 </h1>
 <p>Data Structure is a collection of variables.<br>
-Based on the method of collecting the varibles, the four basic data structure are presented in Python.</p>
+Based on the method of collecting the varibles, the four basic data structures are presented in Python.</p>
 <ol>
 <li>List</li>
 <li>Tuple</li>
@@ -521,12 +542,12 @@ Based on the method of collecting the varibles, the four basic data structure ar
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="List">
+<h2 id="List">
 <a class="anchor" href="#List" aria-hidden="true"><span class="octicon octicon-link"></span></a>List<a class="anchor-link" href="#List"> </a>
-</h1>
+</h2>
 <p>The Most commonly used data structure in Python, <code>List</code> has the following properties :</p>
 <ol>
-<li>Element Accessable with ordered</li>
+<li>Element accessable with order</li>
 <li>Mutable (variable value can be changed)</li>
 </ol>
 
@@ -543,10 +564,10 @@ Based on the method of collecting the varibles, the four basic data structure ar
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">list_height</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">178</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">height_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">172</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">160</span><span class="p">,</span> <span class="mi">178</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Heights of student in class..."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">list_height</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">height_list</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -575,9 +596,9 @@ Based on the method of collecting the varibles, the four basic data structure ar
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Access-with-Index">
+<h3 id="Access-with-Index">
 <a class="anchor" href="#Access-with-Index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access with Index<a class="anchor-link" href="#Access-with-Index"> </a>
-</h2>
+</h3>
 <p><img src="/mce-51069/images/copied_from_nb/animations/index_animation.gif" alt="">
 </p>
 <div class="flash">
@@ -651,7 +672,7 @@ Student A height :  178
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>IndexError: list index out of range.</code><br>
-Because there are only 5 elements in list, <code>list_height[5]</code> request for 6th element, which is out of range.</p>
+Because there are only 5 elements in that list, <code>list_height[5]</code> requests for 6th element, which is out of range.</p>
 
 </div>
 </div>
@@ -659,9 +680,9 @@ Because there are only 5 elements in list, <code>list_height[5]</code> request f
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Access-with-Iteration(For-Loop)">
-<a class="anchor" href="#Access-with-Iteration(For-Loop)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access with Iteration(For Loop)<a class="anchor-link" href="#Access-with-Iteration(For-Loop)"> </a>
-</h2>
+<h3 id="Access-with-iteration-(For-Loop)">
+<a class="anchor" href="#Access-with-iteration-(For-Loop)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access with iteration (For Loop)<a class="anchor-link" href="#Access-with-iteration-(For-Loop)"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -710,9 +731,9 @@ There are total of 5 students in the class
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="List-with-different-Datatype">
+<h3 id="List-with-different-Datatype">
 <a class="anchor" href="#List-with-different-Datatype" aria-hidden="true"><span class="octicon octicon-link"></span></a>List with different Datatype<a class="anchor-link" href="#List-with-different-Datatype"> </a>
-</h2>
+</h3>
 <p>We could store, not just one datatype, but variables with different data type in a list.</p>
 
 </div>
@@ -815,9 +836,10 @@ Aung_PaingMcE
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>TypeError :can only concatenate str to str | int to int</code></p>
-<p>Different data type cannot be added (concatenate) together.<br>
-For that, in python, we use <code>Dictionary</code> to store information.</p>
+<p><code>TypeError :can only concatenate str to str | int to int</code><br><br>
+This often happen in <code>List</code> when we try to store different data type into one list.<br>
+It is hard to get exact index for each element.<br>
+For that, in python, we use <code>Dictionary</code> to store key-value paired information.</p>
 
 </div>
 </div>
@@ -830,7 +852,7 @@ For that, in python, we use <code>Dictionary</code> to store information.</p>
 </h2>
 <p>When we walk into a library and want to find a book, we search by the book title, the book author or may be the published year.<br>
 Python use the same idea to store value for the varible, by creating the key for that value.<br>
-That is why you often heard <code>dict</code> in python is key-value paired.</p>
+That is why you often heard <code>Dictionary</code> in python is key-value paired.</p>
 
 </div>
 </div>
@@ -846,12 +868,12 @@ That is why you often heard <code>dict</code> in python is key-value paired.</p>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Dictionary</span>
-<span class="n">student_A_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Aung_Paing"</span><span class="p">,</span>
+<span class="n">student_A_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Aung Aung"</span><span class="p">,</span>
                  <span class="s2">"Major"</span> <span class="p">:</span> <span class="s2">"McE"</span><span class="p">,</span>
                  <span class="s2">"Batch"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                  <span class="s2">"Year"</span> <span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
 
-<span class="n">student_B_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Soe_Pyae"</span><span class="p">,</span>
+<span class="n">student_B_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Name"</span> <span class="p">:</span> <span class="s2">"Soe Soe"</span><span class="p">,</span>
                  <span class="s2">"Major"</span> <span class="p">:</span> <span class="s2">"Civil"</span><span class="p">,</span>
                  <span class="s2">"Batch"</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                  <span class="s2">"Year"</span> <span class="p">:</span> <span class="mi">6</span><span class="p">}</span>
@@ -872,8 +894,8 @@ That is why you often heard <code>dict</code> in python is key-value paired.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{'Name': 'Aung_Paing', 'Major': 'McE', 'Batch': 3, 'Year': 6}
-{'Name': 'Soe_Pyae', 'Major': 'Civil', 'Batch': 3, 'Year': 6}
+<pre>{'Name': 'Aung Aung', 'Major': 'McE', 'Batch': 3, 'Year': 6}
+{'Name': 'Soe Soe', 'Major': 'Civil', 'Batch': 3, 'Year': 6}
 </pre>
 </div>
 </div>
@@ -912,7 +934,7 @@ That is why you often heard <code>dict</code> in python is key-value paired.</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Name :  Aung_Paing
+<pre>Name :  Aung Aung
 Major :  McE
 Batch :  3
 Year :  6
@@ -1041,7 +1063,7 @@ These information, we want to access them, but not change them, are created with
 <a class="anchor" href="#Set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set<a class="anchor-link" href="#Set"> </a>
 </h2>
 <p><code>Set</code> as the name suggest, is a set of collection.<br>
-it does not care about the order of that collection, it does not even care how many elements are in that collection, it only cares about the representative in that collection.</p>
+it does not care about the order of that collection or how many elements are in that collection, it only cares about the representative in that collection.</p>
 
 </div>
 </div>
@@ -1088,7 +1110,7 @@ it does not care about the order of that collection, it does not even care how m
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://docs.python.org/3/tutorial/introduction.html#lists">Reference : Python Official Documentation on Data Structure</a></p>
+<p>If you would like to know more about Data Structure in Python. Please visit official Python <a href="https://docs.python.org/3/tutorial/datastructures.html">cocumentation</a></p>
 
 </div>
 </div>
@@ -1111,7 +1133,7 @@ Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</e
 <h2 id="Conditional">
 <a class="anchor" href="#Conditional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional<a class="anchor-link" href="#Conditional"> </a>
 </h2>
-<p>In Python, such conditional are conducted by <code>if-else</code> statement.</p>
+<p>In Python, such conditional can be constructed by <code>if-else</code> statement.</p>
 
 </div>
 </div>
@@ -1169,13 +1191,14 @@ Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</e
 <li>for</li>
 <li>while</li>
 </ol>
-<p><code>For</code> iterate for the given range,<br>
-<code>While</code> check the condition and continue iteration until condition is False.</p>
+<p><code>For</code> iterates for the given range,<br>
+<code>While</code> checks the condition and continue iteration until condition is False.</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">range</span><span class="p">():</span>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
 </pre></div>
-<p><a href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">Reference : Python Official Document on if-else statement</a></p>
+<p>If you would like to study more about Conditional and Loop in Python, please visit the official Python 
+<a href="https://docs.python.org/3/tutorial/controlflow.html">documentation</a>.</p>
 
 </div>
 </div>
@@ -1186,7 +1209,7 @@ Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</e
 <h1 id="Functions">
 <a class="anchor" href="#Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions<a class="anchor-link" href="#Functions"> </a>
 </h1>
-<p>Functions are great arsenal in python.<br> You could think of <strong>functions</strong> as a factory, <code>process(do function)</code> the <code>raw inputs(Arguments)</code> to <code>Desired products(output)</code>.
+<p>Functions are great arsenal in python.<br> You could think of <strong>functions</strong> as a factory, that <code>process(do function)</code> the <code>raw inputs(Arguments)</code> to <code>Desired products(output)</code>.
 There are two types of functions in Python.</p>
 <ol>
 <li>
@@ -1209,7 +1232,7 @@ There are two types of functions in Python.</p>
 <h2 id="Built-in-Functions">
 <a class="anchor" href="#Built-in-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Functions<a class="anchor-link" href="#Built-in-Functions"> </a>
 </h2>
-<p>Built-in Functions, come along with python, could be very useful when you need them.<br>
+<p>Built-in Functions are functions that come along with python. They could be very useful when you need them.<br>
 Following are some examples for such case.</p>
 
 </div>
@@ -1277,9 +1300,9 @@ True
 <h2 id="User-Defined-Functions">
 <a class="anchor" href="#User-Defined-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>User-Defined Functions<a class="anchor-link" href="#User-Defined-Functions"> </a>
 </h2>
-<p>We could defind functions as we would like the program to process.<br>
+<p>We could also defind functions as we would like the program to process.<br>
 Typical function in python consists of following parts.</p>
-<p><img src="/mce-51069/images/copied_from_nb/animations/function.jpeg" alt=""></p>
+<p><img src="/mce-51069/images/copied_from_nb/images/function.jpeg" alt=""></p>
 <p>When Constructing a function, what you, the developer, need to know are:</p>
 <ol>
 <li>Input (Arguments in functions)</li>
@@ -1349,22 +1372,9 @@ Typical function in python consists of following parts.</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Class">
-<a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
-</h1>
-<ol>
-<li><a href="#built_in_">Built-in Class</a></li>
-<li>
-<a href="#user_">User Defined</a><ul>
-<li>Inheritance</li>
-</ul>
-</li>
-</ol>
-<p>Class in python acts like a template.<br>
-eg. When we think of a person, <br>
-he has <code>properties</code> of [<em>Name</em>, <em>Age</em>, <em>Position</em>, <em>Hobby</em>] and so on.<br>
-These properties can be applied to every one who is a person.</p>
-<p>So, we create a template 'Class' and then, create <em>objects</em>, one person each for that class.</p>
+<p>In the above function, we have the <code>Process</code> of <code>Calculate the Power of base_num</code>,<br>
+<code>Input</code> of <code>base_num</code> and <code>pow_num</code> as <strong>Int</strong>, and <code>Output</code> of <code>power_num</code> as <strong>Int</strong>.
+<img src="/mce-51069/images/copied_from_nb/images/function.png" alt=""></p>
 
 </div>
 </div>
@@ -1372,20 +1382,44 @@ These properties can be applied to every one who is a person.</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="built_in_"></a></p>
-<h2 id="Built-in-Class">
-<a class="anchor" href="#Built-in-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Class<a class="anchor-link" href="#Built-in-Class"> </a>
-</h2>
-<p>There are already many built-in classes that come with python.</p>
-<div class="highlight"><pre><span></span><span class="n">int_obj</span> <span class="o">=</span> <span class="nb">int</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">int_obj</span><span class="p">))</span>
+<h1 id="Classes">
+<a class="anchor" href="#Classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classes<a class="anchor-link" href="#Classes"> </a>
+</h1>
+<p>Classes are the main building blocks in Object Oriented Programming (OOP). OOP is one of the hardest parts for beginners when they are first starting to learn Python. But we will get you through OOP in the following section. So, let's start.</p>
 
-<span class="n">bool_obj</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bool_obj</span><span class="p">))</span>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/animations/OOP.gif" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Intro-to-OOP">
+<a class="anchor" href="#Intro-to-OOP" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro to OOP<a class="anchor-link" href="#Intro-to-OOP"> </a>
+</h2>
+<p>Let's start the lesson by remembering about the Basic Python Objects. For example:</p>
+<div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+<p>When we print out the type of that <em>lst</em></p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lst</span><span class="p">))</span>
 </pre></div>
 
-<pre><code>&lt;class 'int'&gt;
-&lt;class 'bool'&gt;</code></pre>
+<pre><code>&lt;class 'list'&gt;</code></pre>
+<p>This is the built-in <code>Class</code> of <code>list</code>.<br>
+And we can call <strong>methods</strong> on that list with</p>
+<div class="highlight"><pre><span></span><span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lst</span>
+</pre></div>
+
+<pre><code>[0, 1, 2, 3, 2]</code></pre>
+<p>Here, <em>append</em> is the method that the <code>&lt;class 'list'&gt;</code> has.</p>
 
 </div>
 </div>
@@ -1393,24 +1427,404 @@ These properties can be applied to every one who is a person.</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id="user"></a></p>
-<h2 id="User-Defined-Class">
-<a class="anchor" href="#User-Defined-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>User-Defined Class<a class="anchor-link" href="#User-Defined-Class"> </a>
-</h2>
-<p>We could create a class for our own need. Assign properties and methods to that class</p>
+<h3 id="Objects">
+<a class="anchor" href="#Objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects<a class="anchor-link" href="#Objects"> </a>
+</h3>
+<p>Everything in Python is an object. We can use type() to check the type of object:</p>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">([]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">({}))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class 'int'&gt;
+&lt;class 'list'&gt;
+&lt;class 'tuple'&gt;
+&lt;class 'dict'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we know all these things are objects, so how can we create our own Object types? That is where the <code>class</code> keyword comes in.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Class-and-Attributes">
+<a class="anchor" href="#Class-and-Attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class and Attributes<a class="anchor-link" href="#Class-and-Attributes"> </a>
+</h2>
+<h3 id="class">
+<a class="anchor" href="#class" aria-hidden="true"><span class="octicon octicon-link"></span></a>class<a class="anchor-link" href="#class"> </a>
+</h3>
+<p>User defined objects are created using the <code>class</code> keyword. The <strong>class</strong> is a blueprint that defines the nature of a future object. From classes we can construct instances. An instance is a specific object created from a particular class. For example:</p>
+<div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+<p>We created the object <em>t</em> which was an instance of a tuple object.</p>
+<p>Now, Let's try a step up and create our own class.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Construct a new object type called Student</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Instance of the class Student</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+<pre><code>&lt;class '__main__.Student'&gt;</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Most of the programmers give classes a name that starts with a capital letter by convention. Note how <strong>x</strong> is now the instance of a Student class. In other words, we instantiate the Student class.</p>
+<p>At the inside of the class we currently just have <code>pass</code> keyword. But we can define class attributes and methods.</p>
+<blockquote>
+<p>An <strong>attribute</strong> is a characteristic of an object.<br>A <strong>method</strong> is an operation we can perform with the object.</p>
+</blockquote>
+<p>For example, we can create a class called Dog. An attribute of a dog may be its breed or its name, while a method of a dog may be defined by a .bark() method which returns a sound.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Attributes">
+<a class="anchor" href="#Attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes<a class="anchor-link" href="#Attributes"> </a>
+</h3>
+<p>The syntax for creating an attribute is:</p>
+
+<pre><code>self.attribute = something</code></pre>
+<p>There is a special method called:</p>
+
+<pre><code>__init__()</code></pre>
+<p>This method is used to initialize the attributes of an object. For example:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Aung Paing'</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Soe Pyae Phyo'</span><span class="p">)</span>
+</pre></div>
+<p>Let's break down what we have above. The special method</p>
+
+<pre><code>__init__()</code></pre>
+<p>is called automatically right after the object has been created.</p>
+
+<pre><code>def __init__(self, name):</code></pre>
+<p>Each attribute in a class definition begins with a reference to the instance object. It is by convention named self. The <em>name</em> is the argument. The value is passed during the class instantiation.</p>
+
+<pre><code>self.name = name</code></pre>
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong><code>self.name</code> can be given any desire variable names; no need to be <code>name</code>. For example, <code>self.student_name = name</code>
+</div>
+Now we have created two instances of the Student class. With two different names, we can then use these attributes like this:
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+
+<pre><code>'Aung Aung'</code></pre>
+<div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+
+<pre><code>'Soe Soe'</code></pre>
+<p>Note how we don't have any parentheses after name; this is because it is an <em>attribute</em> and doesn't take any arguments.</p>
+<p>Lets add more <em>attributes</em> to our <strong>Student</strong> class.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">major</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">passedlastterm</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="n">major</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch</span> <span class="o">=</span> <span class="n">batch</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">passedlastterm</span> <span class="o">=</span> <span class="n">passedlastterm</span>
+        
+
+<span class="n">student_a</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">"Myo Myo"</span><span class="p">,</span> <span class="s2">"EC"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">student_b</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">"Su Su"</span><span class="p">,</span> <span class="s2">"Text"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Student a Data :"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_a</span><span class="o">.</span><span class="n">major</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_a</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_a</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_a</span><span class="o">.</span><span class="n">passedlastterm</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Student a Data :
+Myo Myo
+EC
+3
+24
+True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Methods">
+<a class="anchor" href="#Methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods<a class="anchor-link" href="#Methods"> </a>
+</h2>
+<p>Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects. Methods are a key concept of the OOP pattern. They are essential to dividing responsibilities in programming, especially in large applications.</p>
+<p>Let's go through an example of creating a Square class:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
+    
+    <span class="c1"># Square gets instantiated</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">area</span>   <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span>
+    
+    <span class="c1"># Resetting length</span>
+    <span class="k">def</span> <span class="nf">setLength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_length</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">new_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="n">new_length</span> <span class="o">*</span> <span class="n">new_length</span>
+        
+<span class="n">s</span> <span class="o">=</span> <span class="n">Square</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Length is '</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Area is '</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+
+<span class="n">s</span><span class="o">.</span><span class="n">setLength</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Now length is '</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Now area is '</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Length is  4
+Area is  16
+Now length is  6
+Now area is  36
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this Square class, we have defined two attributes: <code>self.length</code> and <code>self.area</code>.</p>
+
+<pre><code>def setLength(self, new_length):</code></pre>
+<p>is called <strong>method</strong> of the class, which we use to interact with the user and manipulate the class attributes. Notice how we used <code>self.</code> notation to reference attributes of the class within the method calls.</p>
+<p>Now, Let's add some methods to <strong>Student</strong> class.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">major</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">passedlastterm</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="n">major</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch</span> <span class="o">=</span> <span class="n">batch</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">passedlastterm</span> <span class="o">=</span> <span class="n">passedlastterm</span>
+        
+    <span class="k">def</span> <span class="nf">print_result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">passedlastterm</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Congrats, you can move to next term."</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Sorry, you need to retake the exam."</span><span class="p">)</span>
+
+            
+<span class="n">student_a</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">"Myo Myo"</span><span class="p">,</span> <span class="s2">"EC"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Student a Result"</span><span class="p">)</span>
+<span class="n">student_a</span><span class="o">.</span><span class="n">print_result</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Student a Result
+Congrats, you can move to next term.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Inheritance">
 <a class="anchor" href="#Inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance<a class="anchor-link" href="#Inheritance"> </a>
 </h2>
-<p>We could create another class, which has all <strong>attributes</strong> and <strong>methods</strong> as Student, but it also has other <strong>attributes</strong> and <strong>methods</strong>.<br>
-We call that inheritance</p>
+<p>Inheritance is a way to form new classes using classes that have already been defined. The newly formed classes are called derived classes, the classes that we derive from are called base classes. Important benefits of inheritance are code reuse and reduction of complexity of a program. The derived classes override or extend the functionality of base classes.</p>
+<p>Let's use our <strong>Student</strong> class again.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Inheritance and not change anything.</span>
+<span class="k">class</span> <span class="nc">ExchangeStudent</span><span class="p">(</span><span class="n">Student</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this example, we have two classes: <strong>Student</strong> and <strong>ExchangeStudent</strong>. The Student is the base class, the ExchangeStudent is the derived class.</p>
+<p>The derived class inherits the functionality of the base class. This is shown in the example below.</p>
+<div class="highlight"><pre><span></span><span class="c1"># ExchangeStudent should have all properties and methods Student has.</span>
+<span class="n">student_ex</span> <span class="o">=</span> <span class="n">ExchangeStudent</span><span class="p">(</span><span class="s2">"Htet Htet"</span><span class="p">,</span> <span class="s2">"Civil"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Student ex Result"</span><span class="p">)</span>
+<span class="n">student_ex</span><span class="o">.</span><span class="n">print_result</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>Student ex Result
+Congrats, you can move to next term.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-Resources">
+<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+</h2>
+<p>If you want to learn more about Object Oriented Programming (OOP) in more details, please visit to official Python <a href="https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes">documentation</a>. You can also check <a href="https://realpython.com/python3-object-oriented-programming/">this</a> blog post about OOP.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+</div>
 </div>
 </div>
 </div>
