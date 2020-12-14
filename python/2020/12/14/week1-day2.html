@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      19 min read
     
 </span></p>
 
@@ -139,14 +139,25 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h1"><a href="#Conditional-&-Loop-in-Python">Conditional &amp; Loop in Python </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Conditional">Conditional </a></li>
-<li class="toc-entry toc-h2"><a href="#Loop">Loop </a></li>
+<li class="toc-entry toc-h2"><a href="#Conditionals">Conditionals </a></li>
+<li class="toc-entry toc-h2"><a href="#Loop">Loop </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#For">For </a></li>
+<li class="toc-entry toc-h3"><a href="#While">While </a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Functions">Functions </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Built-in-Functions">Built-in Functions </a></li>
-<li class="toc-entry toc-h2"><a href="#User-Defined-Functions">User-Defined Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#User-Defined-Functions">User-Defined Functions </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#def-Statements">def Statements </a></li>
+<li class="toc-entry toc-h3"><a href="#Using-return">Using return </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Classes">Classes </a>
@@ -479,8 +490,8 @@ For example, <strong>Int</strong> variable and <strong>String</strong> variable 
 <h1 id="Data-Structure">
 <a class="anchor" href="#Data-Structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Structure<a class="anchor-link" href="#Data-Structure"> </a>
 </h1>
-<p>Data Structure is a collection of variables.<br>
-Based on the method of collecting the varibles, the four basic data structures are presented in Python.</p>
+<p>Python Data Structures are used to store and collect data. 
+There are four basic built-in data structures in Python.</p>
 <ol>
 <li>List</li>
 <li>Tuple</li>
@@ -852,7 +863,7 @@ For that, in python, we use <code>Dictionary</code> to store key-value paired in
 </h2>
 <p>When we walk into a library and want to find a book, we search by the book title, the book author or may be the published year.<br>
 Python use the same idea to store value for the varible, by creating the key for that value.<br>
-That is why you often heard <code>Dictionary</code> in python is key-value paired.</p>
+Thus <code>Dictionary</code> in python is key-value paired data structure.</p>
 
 </div>
 </div>
@@ -955,8 +966,8 @@ Year :  6
 <a class="anchor" href="#Tuple" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tuple<a class="anchor-link" href="#Tuple"> </a>
 </h2>
 <p>Sometimes, we need <strong>immutable</strong> data.<br>
-Like the <em>Coordinate</em> of a location, your lovely <em>Birthday Date</em>, his/her <em>Phone Number</em> or may be even your <em>gene code</em>.<br>
-These information, we want to access them, but not change them, are created with <code>Tuple</code>.</p>
+Like the <em>Coordinate</em> of a location, your lovely <em>Birthday Date</em>, your significant other's <em>Phone Number</em> or may be even your <em>gene code</em>.<br>
+The data that we want to access but must be changed are stored with <code>Tuple</code>.</p>
 
 </div>
 </div>
@@ -1063,7 +1074,7 @@ These information, we want to access them, but not change them, are created with
 <a class="anchor" href="#Set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set<a class="anchor-link" href="#Set"> </a>
 </h2>
 <p><code>Set</code> as the name suggest, is a set of collection.<br>
-it does not care about the order of that collection or how many elements are in that collection, it only cares about the representative in that collection.</p>
+Sets ignore the order and the number of elements in a collection and only store the representatives in that collection.</p>
 
 </div>
 </div>
@@ -1130,10 +1141,13 @@ Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</e
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conditional">
-<a class="anchor" href="#Conditional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional<a class="anchor-link" href="#Conditional"> </a>
+<h2 id="Conditionals">
+<a class="anchor" href="#Conditionals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditionals<a class="anchor-link" href="#Conditionals"> </a>
 </h2>
-<p>In Python, such conditional can be constructed by <code>if-else</code> statement.</p>
+<p><code>if</code> Statements in Python allow us to tell the computer to perform alternative actions based on a certain set of results.</p>
+<p>In other words, we are telling the computer : "Hey if this case happens, perform some action"</p>
+<p>We can then expand the idea further with <code>elif</code> and <code>else</code> statements, which allows us to tell the computer: "Hey if this case happens, perform some action. Else, if another case happens, perform some other action. Else, if none of the above cases happened, perform this action"</p>
+<p>Let's go ahead and look at the syntax format for <code>if-else</code> cases to get a better idea of this:</p>
 
 </div>
 </div>
@@ -1180,23 +1194,179 @@ Like, if I am <em>Happy</em> in coding, I would like to get job in <em>Coding</e
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># sometime, in the program, we have to deal with other conditions</span>
+<span class="n">rain</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">weekday</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">rain</span> <span class="ow">and</span> <span class="n">weekday</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I am going to School Today"</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">rain</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">weekday</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"I am going out to play"</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Rain and weekday</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Even though it is raining, I still have to go to school ..."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am going to School Today
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Loop">
 <a class="anchor" href="#Loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loop<a class="anchor-link" href="#Loop"> </a>
 </h2>
-<p>There are two main types of loop in python.</p>
+<p>There are two main types of loops in python.</p>
 <ol>
 <li>for</li>
 <li>while</li>
 </ol>
-<p><code>For</code> iterates for the given range,<br>
+<p>Generally, <code>For</code> iterates for the given range,<br>
 <code>While</code> checks the condition and continue iteration until condition is False.</p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="nb">range</span><span class="p">():</span>
 </pre></div>
 <div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
 </pre></div>
+<h3 id="For">
+<a class="anchor" href="#For" aria-hidden="true"><span class="octicon octicon-link"></span></a>For<a class="anchor-link" href="#For"> </a>
+</h3>
+<p>A <code>for</code> loop acts as an iterator in Python; it goes through items that are in a sequence or any other iterable item. Objects, that we've learned and we can iterate over, include strings, lists, tuples, and even built-in iterables for dictionaries, such as keys or values.</p>
+<p>Here's the general format for a for loop in Python:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">statements</span> <span class="n">to</span> <span class="n">do</span> <span class="n">things</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop for 10 times</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 1 2 3 4 5 6 7 8 9 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="While">
+<a class="anchor" href="#While" aria-hidden="true"><span class="octicon octicon-link"></span></a>While<a class="anchor-link" href="#While"> </a>
+</h3>
+<p>The <code>while</code> statement in Python is one of most general ways to perform iteration. A <code>while</code> statement will repeatedly execute a single statement or group of statements as long as the condition is true. The reason it is called a 'loop' is because the code statements are looped through over and over again until the condition is no longer met.</p>
+<p>The general format of a while loop is:</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">code</span> <span class="n">statements</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">final</span> <span class="n">code</span> <span class="n">statements</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># While loop and loop for 10 times.</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+    </details>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 1 2 3 4 5 6 7 8 9 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>If you would like to study more about Conditional and Loop in Python, please visit the official Python 
 <a href="https://docs.python.org/3/tutorial/controlflow.html">documentation</a>.</p>
 
@@ -1214,11 +1384,9 @@ There are two types of functions in Python.</p>
 <ol>
 <li>
 <a href="#built_in">Built-in Function</a><br>
-<a href="https://docs.python.org/3/library/functions.html">Reference : Python Official</a>
 </li>
 <li>
 <a href="#user">User Defined Function</a><br>
-<a href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">Reference : Python Official</a>
 </li>
 </ol>
 
@@ -1232,7 +1400,7 @@ There are two types of functions in Python.</p>
 <h2 id="Built-in-Functions">
 <a class="anchor" href="#Built-in-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Built-in Functions<a class="anchor-link" href="#Built-in-Functions"> </a>
 </h2>
-<p>Built-in Functions are functions that come along with python. They could be very useful when you need them.<br>
+<p>We've already seen a few example of built-in functions when learning about Data Types in Python. Built-in Functions, come along with python and could be very useful when you need them.<br>
 Following are some examples for such case.</p>
 
 </div>
@@ -1300,16 +1468,42 @@ True
 <h2 id="User-Defined-Functions">
 <a class="anchor" href="#User-Defined-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>User-Defined Functions<a class="anchor-link" href="#User-Defined-Functions"> </a>
 </h2>
-<p>We could also defind functions as we would like the program to process.<br>
-Typical function in python consists of following parts.</p>
+<p>This section will consist of explaining what a function is in Python and how to create one. Functions will be one of our main building blocks when we construct larger and larger amounts of code to solve problems.</p>
 <p><img src="/mce-51069/images/copied_from_nb/images/function.jpeg" alt=""></p>
-<p>When Constructing a function, what you, the developer, need to know are:</p>
+<p>When Constructing a function, what you, the developer, need to consider are:</p>
 <ol>
 <li>Input (Arguments in functions)</li>
 <li>Process (What this function do)</li>
 <li>Output(What this function output)</li>
 </ol>
-<p>In short, <code>IPO</code> for making a function.</p>
+<p>In short, <code>IPO</code> for constructing a function.</p>
+<p>Functions will be one of most basic levels of reusing code in Python, and it will also allow us to start thinking of program design (we will dive much deeper into the ideas of design when we learn about Object Oriented Programming).</p>
+<h3 id="def-Statements">
+<a class="anchor" href="#def-Statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>def Statements<a class="anchor-link" href="#def-Statements"> </a>
+</h3>
+<p>Let's see how to build out a function's syntax in Python. It has the following form:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span><span class="n">arg2</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    This is where the function's Document String (docstring) goes</span>
+<span class="sd">    '''</span>
+    <span class="c1"># Do stuff here</span>
+    <span class="c1"># Return desired result</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We begin with def then a space, followed by the name of the function. Try to keep names relevant though they can be variable, for example <code>len()</code> is a good name for a length() function. Also be careful with names, you wouldn't want to call a function the same name as a built-in functions(such as <strong>len</strong>).</p>
+<p>Next comes a pair of parentheses with a number of arguments separated by a comma. These arguments are the inputs for your function. You'll be able to use these inputs in your function and reference them. After this you put a colon.</p>
+<p>Now here is the important step, you must <em>indent</em> to begin the code inside your function correctly. Python makes use of whitespace to organize code. Lots of other programing languages do not do this, so keep that in mind.</p>
+<h3 id="Using-return">
+<a class="anchor" href="#Using-return" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using return<a class="anchor-link" href="#Using-return"> </a>
+</h3>
+<p>Let's see some examples that use a <code>return</code> statement. <strong>return</strong> allows a function to return a result that can then be stored as a variable, or used in whatever manner a user wants.</p>
+<p>Let's see the example of Power the input base_num and pow_num.</p>
 
 </div>
 </div>
@@ -1375,6 +1569,17 @@ Typical function in python consists of following parts.</p>
 <p>In the above function, we have the <code>Process</code> of <code>Calculate the Power of base_num</code>,<br>
 <code>Input</code> of <code>base_num</code> and <code>pow_num</code> as <strong>Int</strong>, and <code>Output</code> of <code>power_num</code> as <strong>Int</strong>.
 <img src="/mce-51069/images/copied_from_nb/images/function.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-Resources">
+<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+</h2>
+<p>If you want to learn more about built-in functions in more details, please visit to official Python <a href="https://docs.python.org/3/library/functions.html#built-in-functions">documentation</a>. You can also check <a href="https://realpython.com/defining-your-own-python-function/">this</a> blog post about Functions.</p>
 
 </div>
 </div>
