@@ -93,7 +93,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      34 min read
+      27 min read
     
 </span></p>
 
@@ -119,7 +119,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Arithmetic-Operations-on-Number-Data-Types">Arithmetic Operations on Number Data Types </a></li>
 <li class="toc-entry toc-h2"><a href="#String-Operations">String Operations </a></li>
 <li class="toc-entry toc-h2"><a href="#Boolean-Operation">Boolean Operation </a></li>
-<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources-for-Data-Types">Further Resources for Data Types </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Data-Structures">Data Structures </a>
@@ -135,7 +135,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Tuple">Tuple </a></li>
 <li class="toc-entry toc-h2"><a href="#Set">Set </a></li>
 <li class="toc-entry toc-h2"><a href="#Tips">Tips </a></li>
-<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources-for-Data-Structure">Further Resources for Data Structure </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Conditionals-&-Loops-in-Python">Conditionals &amp; Loops in Python </a>
@@ -143,12 +143,15 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Conditionals">Conditionals </a></li>
 <li class="toc-entry toc-h2"><a href="#Loops">Loops </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#For">For </a></li>
-<li class="toc-entry toc-h3"><a href="#Nested-For-Loop">Nested For Loop </a></li>
+<li class="toc-entry toc-h3"><a href="#For">For </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Nested-For-Loop">Nested For Loop </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#While">While </a></li>
-<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+<li class="toc-entry toc-h3"><a href="#While">While </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources-for-Conditionals-and-Loops">Further Resources for Conditionals and Loops </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Functions">Functions </a>
@@ -160,7 +163,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Using-return">Using return </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources-for-Functions">Further Resources for Functions </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Classes">Classes </a>
@@ -178,7 +181,7 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#Methods">Methods </a></li>
 <li class="toc-entry toc-h2"><a href="#Inheritance">Inheritance </a></li>
-<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources-for-Class">Further Resources for Class </a></li>
 </ul>
 </li>
 </ul><!--
@@ -672,11 +675,16 @@ Boolean variables are often used in conditional operations, such as <code>if</co
     
     
 <div class="cell border-box-sizing code_cell rendered">
+<details class="description">
+      <summary class="btn btn-sm" data-open="Hide Code" data-close="Show Code"></summary>
+        <p></p>
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">bool1</span> <span class="ow">and</span> <span class="n">bool2</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We could use AND, OR operation too.</span>
+
+<span class="k">if</span> <span class="n">bool1</span> <span class="ow">and</span> <span class="n">bool2</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Both Variables are True"</span><span class="p">)</span>
     
 <span class="k">if</span> <span class="n">bool1</span> <span class="ow">or</span> <span class="n">bool2</span><span class="p">:</span>
@@ -687,6 +695,7 @@ Boolean variables are often used in conditional operations, such as <code>if</co
 </div>
 </div>
 
+    </details>
 <div class="output_wrapper">
 <div class="output">
 
@@ -707,8 +716,8 @@ Boolean variables are often used in conditional operations, such as <code>if</co
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Resources">
-<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+<h2 id="Further-Resources-for-Data-Types">
+<a class="anchor" href="#Further-Resources-for-Data-Types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources for Data Types<a class="anchor-link" href="#Further-Resources-for-Data-Types"> </a>
 </h2>
 </div>
 </div>
@@ -1440,295 +1449,11 @@ When you encounter an <strong>Error</strong> in the code, try the following step
 <li>Ask for help in forums if necessary.</li>
 </ol>
 <p>There are more than 8 million python users in the world and it is very likely that someone has encounterd the same problem as you did. So, don't hesitate to search for help.</p>
-<p><code>Doc</code><br>
-It is always helpful to read documentations for unkown subjects.<br>
-You can search for help locally in python with:</p>
+<p>We can check the specification of the variable by:</p>
 
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">set_obj</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on set object:
-
-class set(object)
- |  set() -&gt; new empty set object
- |  set(iterable) -&gt; new set object
- |  
- |  Build an unordered collection of unique elements.
- |  
- |  Methods defined here:
- |  
- |  __and__(self, value, /)
- |      Return self&amp;value.
- |  
- |  __contains__(...)
- |      x.__contains__(y) &lt;==&gt; y in x.
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __iand__(self, value, /)
- |      Return self&amp;=value.
- |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  __ior__(self, value, /)
- |      Return self|=value.
- |  
- |  __isub__(self, value, /)
- |      Return self-=value.
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __ixor__(self, value, /)
- |      Return self^=value.
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __or__(self, value, /)
- |      Return self|value.
- |  
- |  __rand__(self, value, /)
- |      Return value&amp;self.
- |  
- |  __reduce__(...)
- |      Return state information for pickling.
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __ror__(self, value, /)
- |      Return value|self.
- |  
- |  __rsub__(self, value, /)
- |      Return value-self.
- |  
- |  __rxor__(self, value, /)
- |      Return value^self.
- |  
- |  __sizeof__(...)
- |      S.__sizeof__() -&gt; size of S in memory, in bytes
- |  
- |  __sub__(self, value, /)
- |      Return self-value.
- |  
- |  __xor__(self, value, /)
- |      Return self^value.
- |  
- |  add(...)
- |      Add an element to a set.
- |      
- |      This has no effect if the element is already present.
- |  
- |  clear(...)
- |      Remove all elements from this set.
- |  
- |  copy(...)
- |      Return a shallow copy of a set.
- |  
- |  difference(...)
- |      Return the difference of two or more sets as a new set.
- |      
- |      (i.e. all elements that are in this set but not the others.)
- |  
- |  difference_update(...)
- |      Remove all elements of another set from this set.
- |  
- |  discard(...)
- |      Remove an element from a set if it is a member.
- |      
- |      If the element is not a member, do nothing.
- |  
- |  intersection(...)
- |      Return the intersection of two sets as a new set.
- |      
- |      (i.e. all elements that are in both sets.)
- |  
- |  intersection_update(...)
- |      Update a set with the intersection of itself and another.
- |  
- |  isdisjoint(...)
- |      Return True if two sets have a null intersection.
- |  
- |  issubset(...)
- |      Report whether another set contains this set.
- |  
- |  issuperset(...)
- |      Report whether this set contains another set.
- |  
- |  pop(...)
- |      Remove and return an arbitrary set element.
- |      Raises KeyError if the set is empty.
- |  
- |  remove(...)
- |      Remove an element from a set; it must be a member.
- |      
- |      If the element is not a member, raise a KeyError.
- |  
- |  symmetric_difference(...)
- |      Return the symmetric difference of two sets as a new set.
- |      
- |      (i.e. all elements that are in exactly one of the sets.)
- |  
- |  symmetric_difference_update(...)
- |      Update a set with the symmetric difference of itself and another.
- |  
- |  union(...)
- |      Return the union of sets as a new set.
- |      
- |      (i.e. all elements that are in either set.)
- |  
- |  update(...)
- |      Update a set with the union of itself and others.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes defined here:
- |  
- |  __hash__ = None
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">set_obj</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>['__and__',
- '__class__',
- '__contains__',
- '__delattr__',
- '__dir__',
- '__doc__',
- '__eq__',
- '__format__',
- '__ge__',
- '__getattribute__',
- '__gt__',
- '__hash__',
- '__iand__',
- '__init__',
- '__init_subclass__',
- '__ior__',
- '__isub__',
- '__iter__',
- '__ixor__',
- '__le__',
- '__len__',
- '__lt__',
- '__ne__',
- '__new__',
- '__or__',
- '__rand__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__ror__',
- '__rsub__',
- '__rxor__',
- '__setattr__',
- '__sizeof__',
- '__str__',
- '__sub__',
- '__subclasshook__',
- '__xor__',
- 'add',
- 'clear',
- 'copy',
- 'difference',
- 'difference_update',
- 'discard',
- 'intersection',
- 'intersection_update',
- 'isdisjoint',
- 'issubset',
- 'issuperset',
- 'pop',
- 'remove',
- 'symmetric_difference',
- 'symmetric_difference_update',
- 'union',
- 'update']</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1773,8 +1498,8 @@ Build an unordered collection of unique elements.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Resources">
-<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+<h2 id="Further-Resources-for-Data-Structure">
+<a class="anchor" href="#Further-Resources-for-Data-Structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources for Data Structure<a class="anchor-link" href="#Further-Resources-for-Data-Structure"> </a>
 </h2>
 <p>If you would like to know more about Data Structure in Python. Please visit official Python <a href="https://docs.python.org/3/tutorial/datastructures.html">cocumentation</a>.  You can also learn more about it in this blog post about <a href="https://realpython.com/python-data-structures/">Common Python Data Structure</a></p>
 
@@ -2302,9 +2027,9 @@ Build an unordered collection of unique elements.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Nested-For-Loop">
+<h4 id="Nested-For-Loop">
 <a class="anchor" href="#Nested-For-Loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested For Loop<a class="anchor-link" href="#Nested-For-Loop"> </a>
-</h3>
+</h4>
 <p><code>Nested For</code>, means <em>for loop</em> inside a <em>for loop</em></p>
 
 </div>
@@ -2353,9 +2078,9 @@ Build an unordered collection of unique elements.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="While">
+<h3 id="While">
 <a class="anchor" href="#While" aria-hidden="true"><span class="octicon octicon-link"></span></a>While<a class="anchor-link" href="#While"> </a>
-</h2>
+</h3>
 <p>The <code>while</code> statement in Python is one of most general ways to perform iteration. A <code>while</code> statement will repeatedly execute a single statement or group of statements as long as the condition is true. The reason it is called a 'loop' is because the code statements are looped through over and over again until the condition is no longer met.</p>
 <p>The general format of a while loop is:</p>
 <div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
@@ -2526,8 +2251,8 @@ All Done!
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Resources">
-<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+<h2 id="Further-Resources-for-Conditionals-and-Loops">
+<a class="anchor" href="#Further-Resources-for-Conditionals-and-Loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources for Conditionals and Loops<a class="anchor-link" href="#Further-Resources-for-Conditionals-and-Loops"> </a>
 </h2>
 <p>If you want to learn more about conditional statements and loops in more details, please visit to official Python <a href="https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools">documentation</a>. You can also learn more about <a href="https://realpython.com/python-conditional-statements/">conditional statements</a>, <a href="https://realpython.com/python-for-loop/">for loops</a> and <a href="https://realpython.com/python-while-loop/">while loops</a> in these posts.</p>
 
@@ -2659,169 +2384,6 @@ True
 [1, 2, 3, 1, 2, 3]
 (1, 2, 3, 1, 2, 3)
 {1: 'a', 2: 'b'}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You can use built-in <code>help</code> function to see the details about the object.</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">dict_obj</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Help on dict object:
-
-class dict(object)
- |  dict() -&gt; new empty dictionary
- |  dict(mapping) -&gt; new dictionary initialized from a mapping object's
- |      (key, value) pairs
- |  dict(iterable) -&gt; new dictionary initialized as if via:
- |      d = {}
- |      for k, v in iterable:
- |          d[k] = v
- |  dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
- |      in the keyword argument list.  For example:  dict(one=1, two=2)
- |  
- |  Built-in subclasses:
- |      StgDict
- |  
- |  Methods defined here:
- |  
- |  __contains__(self, key, /)
- |      True if the dictionary has the specified key, else False.
- |  
- |  __delitem__(self, key, /)
- |      Delete self[key].
- |  
- |  __eq__(self, value, /)
- |      Return self==value.
- |  
- |  __ge__(self, value, /)
- |      Return self&gt;=value.
- |  
- |  __getattribute__(self, name, /)
- |      Return getattr(self, name).
- |  
- |  __getitem__(...)
- |      x.__getitem__(y) &lt;==&gt; x[y]
- |  
- |  __gt__(self, value, /)
- |      Return self&gt;value.
- |  
- |  __init__(self, /, *args, **kwargs)
- |      Initialize self.  See help(type(self)) for accurate signature.
- |  
- |  __iter__(self, /)
- |      Implement iter(self).
- |  
- |  __le__(self, value, /)
- |      Return self&lt;=value.
- |  
- |  __len__(self, /)
- |      Return len(self).
- |  
- |  __lt__(self, value, /)
- |      Return self&lt;value.
- |  
- |  __ne__(self, value, /)
- |      Return self!=value.
- |  
- |  __repr__(self, /)
- |      Return repr(self).
- |  
- |  __reversed__(self, /)
- |      Return a reverse iterator over the dict keys.
- |  
- |  __setitem__(self, key, value, /)
- |      Set self[key] to value.
- |  
- |  __sizeof__(...)
- |      D.__sizeof__() -&gt; size of D in memory, in bytes
- |  
- |  clear(...)
- |      D.clear() -&gt; None.  Remove all items from D.
- |  
- |  copy(...)
- |      D.copy() -&gt; a shallow copy of D
- |  
- |  get(self, key, default=None, /)
- |      Return the value for key if key is in the dictionary, else default.
- |  
- |  items(...)
- |      D.items() -&gt; a set-like object providing a view on D's items
- |  
- |  keys(...)
- |      D.keys() -&gt; a set-like object providing a view on D's keys
- |  
- |  pop(...)
- |      D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
- |      If key is not found, d is returned if given, otherwise KeyError is raised
- |  
- |  popitem(self, /)
- |      Remove and return a (key, value) pair as a 2-tuple.
- |      
- |      Pairs are returned in LIFO (last-in, first-out) order.
- |      Raises KeyError if the dict is empty.
- |  
- |  setdefault(self, key, default=None, /)
- |      Insert key with a value of default if key is not in the dictionary.
- |      
- |      Return the value for key if key is in the dictionary, else default.
- |  
- |  update(...)
- |      D.update([E, ]**F) -&gt; None.  Update D from dict/iterable E and F.
- |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
- |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
- |      In either case, this is followed by: for k in F:  D[k] = F[k]
- |  
- |  values(...)
- |      D.values() -&gt; an object providing a view on D's values
- |  
- |  ----------------------------------------------------------------------
- |  Class methods defined here:
- |  
- |  fromkeys(iterable, value=None, /) from builtins.type
- |      Create a new dictionary with keys from iterable and values set to value.
- |  
- |  ----------------------------------------------------------------------
- |  Static methods defined here:
- |  
- |  __new__(*args, **kwargs) from builtins.type
- |      Create and return a new object.  See help(type) for accurate signature.
- |  
- |  ----------------------------------------------------------------------
- |  Data and other attributes defined here:
- |  
- |  __hash__ = None
-
 </pre>
 </div>
 </div>
@@ -3231,8 +2793,8 @@ We get the <strong>process</strong> of <code>Calculate the Power of base_num</co
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Resources">
-<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+<h2 id="Further-Resources-for-Functions">
+<a class="anchor" href="#Further-Resources-for-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources for Functions<a class="anchor-link" href="#Further-Resources-for-Functions"> </a>
 </h2>
 <p>If you want to learn more about built-in functions in more details, please visit to official Python <a href="https://docs.python.org/3/library/functions.html#built-in-functions">documentation</a>. You can also check <a href="https://realpython.com/defining-your-own-python-function/">this</a> blog post about Functions.</p>
 
@@ -3672,8 +3234,8 @@ Congrats, you can move to next term.</code></pre>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Further-Resources">
-<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+<h2 id="Further-Resources-for-Class">
+<a class="anchor" href="#Further-Resources-for-Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources for Class<a class="anchor-link" href="#Further-Resources-for-Class"> </a>
 </h2>
 <p>If you want to learn more about Object Oriented Programming (OOP) in more details, please visit to official Python <a href="https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes">documentation</a>. You can also check <a href="https://realpython.com/python3-object-oriented-programming/">this</a> blog post about OOP.</p>
 
