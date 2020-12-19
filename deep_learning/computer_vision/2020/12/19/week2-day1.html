@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Week 2, Day 1 (Introduction to Artificial Intelligence and Computer Vision) | McE-51069</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Week 2, Day 1 (Introduction to Artificial Intelligence and Computer Vision)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to first day (Week 2) of the McE-51069 course. In this week, we will walk you through with basic Knowledge on Deep learning and Computer Vision." />
+<meta property="og:description" content="Welcome to first day (Week 2) of the McE-51069 course. In this week, we will walk you through with basic Knowledge on Deep learning and Computer Vision." />
+<link rel="canonical" href="https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/19/week2-day1.html" />
+<meta property="og:url" content="https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/19/week2-day1.html" />
+<meta property="og:site_name" content="McE-51069" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-19T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/19/week2-day1.html","@type":"BlogPosting","headline":"Week 2, Day 1 (Introduction to Artificial Intelligence and Computer Vision)","dateModified":"2020-12-19T00:00:00-06:00","datePublished":"2020-12-19T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/19/week2-day1.html"},"description":"Welcome to first day (Week 2) of the McE-51069 course. In this week, we will walk you through with basic Knowledge on Deep learning and Computer Vision.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/mce-51069/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ytu-cvlab.github.io/mce-51069/feed.xml" title="McE-51069" /><link rel="shortcut icon" type="image/x-icon" href="/mce-51069/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/mce-51069/">McE-51069</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/mce-51069/about/">About Us</a><a class="page-link" href="/mce-51069/search/">Search</a><a class="page-link" href="/mce-51069/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Week 2, Day 1 (Introduction to Artificial Intelligence and Computer Vision)</h1><p class="page-description">Welcome to first day (Week 2) of the McE-51069 course. In this week, we will walk you through with basic Knowledge on Deep learning and Computer Vision.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-19T00:00:00-06:00" itemprop="datePublished">
+        Dec 19, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/mce-51069/categories/#deep_learning">deep_learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/mce-51069/categories/#computer_vision">computer_vision</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Artificial-Intelligence">Artificial Intelligence </a></li>
+<li class="toc-entry toc-h1"><a href="#Computer-Vision">Computer Vision </a></li>
+<li class="toc-entry toc-h1"><a href="#AI-Available-Today">AI Available Today </a></li>
+<li class="toc-entry toc-h1"><a href="#Neural-Network">Neural Network </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Forward-and-Backward-Propagation">Forward and Backward Propagation </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Deep-Neural-Network">Deep Neural Network </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Recap">Recap </a></li>
+<li class="toc-entry toc-h2"><a href="#Further-Resources">Further Resources </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-19-week2-day1.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Artificial-Intelligence">
+<a class="anchor" href="#Artificial-Intelligence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Artificial Intelligence<a class="anchor-link" href="#Artificial-Intelligence"> </a>
+</h1>
+<p>Human has always been fascinated by the ideas of putting the intelligence to the machine. Still, it was until 1956, the term "Artificial Intelligence" was coined, at a conference at Dartmouth College, in Hanover, New Hampshire. At such time, people were very optimistic about the future of AI. And the fundings and interest invest in the field get larger and larger.<br>
+But making a machine to behave just like a human is not an easy task. With the researchers fail to deliver the promise, and also with several reports criticizing progress in AI, the funding and interest in the field get dropped off, people later often refers this as the "AI winter" which happend during 1974s-1980.</p>
+<p>Even though there are some private and public fundings to the field, the whole hype about "Aritificial Intelligence" gets cooled down. And around 1987s to 1993, the field experienced another "winter".</p>
+<p>It was only after 1997, IBM's Deep Blue became the first computer to beat a chess champion, Russian grandmaster Garry Kasparov, that the term "AI" is coming back to the reserach ground.</p>
+<p>The field of artificial intelligence finally had its breakthrough moment in 2012 at the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) with the introduction of Alex-Net. (ILSVRV) is a vision competition and before Alex-Net, the error rate hover around 26%. But with Alex-Net, the error rate comes down to only 16.4%. That is a huge accomplishment and people now see hope in Deep Neural Networks Again.</p>
+<p>Nowaday, when people talk about "Artificial Intelligence", they often refers to "Deep Neural Networks", a branch of Machine learning that imitates the human brain cells as to function and process data. And with modern hardware advanced, big data accessable and algorithms optimized, the field of Deep Learning is getting more and more research interestes and improvements everyday.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Computer-Vision">
+<a class="anchor" href="#Computer-Vision" aria-hidden="true"><span class="octicon octicon-link"></span></a>Computer Vision<a class="anchor-link" href="#Computer-Vision"> </a>
+</h1>
+<p>The main purpose of computer vision is for computer to have the "vision", ability to perceive the world. To do that, we have to know how human vision system work. It is now known that, human vision is hierarchical. Neurons detect simple features like edges, then feed into more complex features like shapes, and then eventually feed into more complex visual representations.</p>
+<p><img src="/mce-51069/images/copied_from_nb/images/percept.png" alt="">
+Today, we have the AI algorithms, that mimic the hierarchical architecture of the human vision system called the CNN(Convolutional Neural Networks). CNNs use convolutional layers to extract the features in images and then use fully connected layers for the output.</p>
+<p><img src="/mce-51069/images/copied_from_nb/images/cnn.jpeg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="AI-Available-Today">
+<a class="anchor" href="#AI-Available-Today" aria-hidden="true"><span class="octicon octicon-link"></span></a>AI Available Today<a class="anchor-link" href="#AI-Available-Today"> </a>
+</h1>
+<p>Even though many people think that AI is far away from our daily life, it is not quite true. When we scroll on social Media, let's say Facebook, we get the newsfeed from Facebook's recommandation AI. And when we travel using "Google Maps", it automatically generates the traffic conditions using AI. What we didn't realize is, AI has already been a part of our daily lives and improving our life quality.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Neural-Network">
+<a class="anchor" href="#Neural-Network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neural Network<a class="anchor-link" href="#Neural-Network"> </a>
+</h1>
+<p>Neural Network is the basic building block for the Deep Neural Networks.</p>
+<p>Let's first do a simple classification on two data points.<br>
+Given the x-coordinate of the data point, we will have to classify wherether this point belongs to red or blue. For that, we will need to find the threshold value, decision boundary or decision surface, whatever you may call it. For this particular example, the threshold value would be 2.5.</p>
+<p>So, we would write this with the logic of taking x-coordinate as the input,x, and check if it is smaller than 2.5, if <code>True</code>, then, the color is "Red", and if <code>False</code>, the color is "Blue".</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_1.jpeg" alt=""></p>
+<p>We can also write the function instead of logic with <strong>x-2.5</strong>, and check if positive or negative.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_2.jpeg" alt="">
+But, still, we do not know the confidence of prediction value by the above equation. For such purposes, Sigmoid function is introduced. It keeps the output range from 0~1. So, if the output from sigmoid is near 1, let's say, 0.9, we would say that this point is 90% sure to be the "Blue" Point. And if the output from the sigmoid is 0.2, we would say this point is 20% sure to be the "Blue" Point or (1-0.2 = 0.8) 80% sure to be the "Red" Point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_3.jpeg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_4.jpeg" alt=""></p>
+<p>Let's apply this logic with 2 dimensions(x and y).
+Remember when we introduced the threshold value, we refered the point as the decision boundary or decision surface. That is because that value(threshold) makes the decision for the model in a single dimension.<br>
+For 2 dimensional cases, we will need a <em>Line (2D)</em> instead of <em>Point (1D)</em> as a decision boundary for classification.</p>
+<p>So, as the dimension for the dataset increases, the dimension of the decision surface also increases.<br>
+In 1D : $(x-2.5)$  :  Only 1 variable<br> 
+In 2D : $(0.5x -y -1)$ :  2 variables</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_5.jpeg" alt="">
+ For this particular example, let's say, the equation for the line is $ y = 0.5x - 1$, then, it can be derived to $ 0.5x - y - 1$. Here, we introduce "Weight", the coefficient of variables, and "Bias", which is a constant value.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_6.jpeg" alt="">
+And with the extra loss function, the basic logistic regression model is developed. Loss function for the model determines how badly the model is performing. The loss function is also known as "Binary cross-entropy" Loss.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_7.jpeg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After finding the Loss of the model, We would like to Update(Optimize) the model for better classification performance. To update the model, gradient descent method is introduced.</p>
+<p>First, the variables(parameters) that we can update in the model are "weight" and "bias". So, we need to know, how the change in weight effect loss. Mathematically, this is called the derivative. So, we would like to know $ \frac{dL}{dW}$.</p>
+<p>And since the equation for the loss is:<br>
+$L = -[ylog\hat{y} + (1-y)log(1-\hat{y})]$, L depends on $\hat{y}$<br>
+$\hat{y} = \sigma{z}$, $\hat{y}$  depends on z<br>
+$Z = W^TX + B$, Z depands on W,<br></p>
+<p>We can use chain Rule to find the derivative of L and W with the following equation.</p>
+<p>$\frac{dL}{dW} = (y - \hat{y}) * X$</p>
+<p>If you want to know the exact steps of derivation, here is this <a href="https://math.stackexchange.com/questions/2503428/derivative-of-binary-cross-entropy-why-are-my-signs-not-right">link</a> from stack exchange.</p>
+<p>After that, we can update the weight values with gradient descent equation:<br>
+$W = W - \alpha \frac{dL}{dW}$<br>
+$\alpha$ here means the learning rate, which is a hyperparameter we can adjust to get the better convergence rate for the model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/log_8.jpeg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Forward-and-Backward-Propagation">
+<a class="anchor" href="#Forward-and-Backward-Propagation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Forward and Backward Propagation<a class="anchor-link" href="#Forward-and-Backward-Propagation"> </a>
+</h2>
+<p>Forward propagation is when the data points pass through the model and output the loss value. Backward propagation happen to update the model parameters(W) with the loss or cost, accumulation of loss value gathered during the forward propagation.</p>
+<p><img src="/mce-51069/images/copied_from_nb/images/forward.jpeg" alt="">
+<img src="/mce-51069/images/copied_from_nb/images/backward.jpeg" alt=""></p>
+<p>The reason why this is called the gradient descent is becasue $ \frac{dL}{dW}$ will approach to zero, minimal value, while updating the model parameter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/animations/gradient_descent.gif" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Deep-Neural-Network">
+<a class="anchor" href="#Deep-Neural-Network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deep Neural Network<a class="anchor-link" href="#Deep-Neural-Network"> </a>
+</h1>
+<p>What happens if we add more units of cells to the previous model?</p>
+<p>The main problem with just simply stacking cells is that the model is still acting linearly. So, we need to introduce some kind of non-linearity to the model, by adding "activation function" to each output of the cell.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/dnn_1.jpeg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, we will introduce Relu (Rectified Linear Unit), which behaves just like linear function if the output is higher than 0.</p>
+<p>The equation for the relu function is as follow:</p>
+<p>$relu(z) = 
+\begin{cases}
+z &amp; if\ z&gt;0\\
+0 &amp; if\ z&lt;=0
+\end{cases}$<br></p>
+<p>And the derivative for the relu is <br>
+$\frac{d}{dz}relu(z) = 
+\begin{cases}
+1 &amp; if\ z&gt;0\\
+0 &amp; if\ z&lt;=0
+\end{cases}$</p>
+<p>The main advantage of using relu is that it does not activate all the neurons at the same time. When the value of z is negative, relu turns it off, returning the zero value, indicating that this feature is not important for the neurons to learn. And since only a certain number of neurons get activated, it is far more computationally efficient than sigmoid and other activation functions.
+<img src="/mce-51069/images/copied_from_nb/images/log_relu.jpeg" alt=""></p>
+<p>If you would like to learn more about various Activation functions, please visit this <a href="https://www.analyticsvidhya.com/blog/2020/01/fundamentals-deep-learning-activation-functions-when-to-use-them/">blog post</a> for more details.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Recap">
+<a class="anchor" href="#Recap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recap<a class="anchor-link" href="#Recap"> </a>
+</h4>
+<p>To conclude of what we have learned, we need several things to construct a neural network: "Weights and Bias", "Activation Functions" and "Loss Function".</p>
+<p>To update(learning) the model, the optimization method "Gradient Descent" was used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-Resources">
+<a class="anchor" href="#Further-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further Resources<a class="anchor-link" href="#Further-Resources"> </a>
+</h2>
+<p>If you would like to learn more about neural networks, you can visit <a href="https://www.youtube.com/channel/UCcIXc5mJsHVYTZR1maL5l9w">Deeplearning.ai</a> on youtube.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/mce-51069/deep_learning/computer_vision/2020/12/19/week2-day1.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/mce-51069/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/mce-51069/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/mce-51069/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Study Artificial Intelligence from Theory-oriented to Practical Approach</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.facebook.com/https%3A%2F%2Fwww.facebook.com%2Fgroups%2F467439787576222" title="https://www.facebook.com/groups/467439787576222"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#facebook"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCDFhKEbfpxKXVk4Mryh7yhA" title="https://www.youtube.com/channel/UCDFhKEbfpxKXVk4Mryh7yhA"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
