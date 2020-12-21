@@ -154,16 +154,14 @@ window.onload = wrap_img;
 <a class="anchor" href="#Import-Necessary-Libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import Necessary Libraries<a class="anchor-link" href="#Import-Necessary-Libraries"> </a>
 </h1>
 <p>Pytorch is the open source machine learning framework that we can use for research to production.</p>
-<p>If you would like to study the tutorial from the offical <a href="https://pytorch.org/">pytorch</a> website, please visit <a href="https://pytorch.org/tutorials/">this link</a>.</p>
-<p>The source code for the entire pytorch framework can be found <a href="https://github.com/pytorch">here</a>.</p>
+<p>If you would like to study the tutorials from the offical <a href="https://pytorch.org/">pytorch</a> website, please visit <a href="https://pytorch.org/tutorials/">this link</a>. The source code for the entire pytorch framework can be found <a href="https://github.com/pytorch">here</a>.</p>
 <blockquote>
-<p>SideNote:pytorch seperate different task into different module. eg. there is a package called <strong>torchaudio</strong> that focus on audio alone.</p>
+<p>SideNote:Pytorch separates different tasks into different modules. e.g., there is a package called <strong>torchaudio</strong> that focus only on audio alone.</p>
 </blockquote>
-<p>Today we will use torchvision, which is the package inside torch, that focus on vision task. For example, for data augmentation, torchvision provide the function called <strong>transforms</strong>. And if you would like to use transfer learning, torchvision also provide some of the state of the art model pretrained available.</p>
-<p>torch.nn contain the basic building blocks that we need to construct our model.<br>
-For example, if we need to construct a <strong>Convolutional Layer</strong>, we could call the function of <code>torch.nn.Conv2d()</code> to construct that layer.</p>
-<p>And if we want linear layer that perform the equation of $y = W^TX + b$, we could call for the function of <code>torch.nn.Linear()</code>.</p>
-<p>If you would like to know more about <code>torch.nn</code> library, please visit this <a href="https://pytorch.org/docs/stable/nn.html">link</a> for more information. Also, this <a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html">post</a> provide better understanding for <code>torch.nn</code></p>
+<p>Today we will use <code>torchvision</code>, which is the package inside torch, that focus on vision tasks. For example, for data augmentation, torchvision provides the function called <strong>transforms</strong>. And if you would like to use transfer learning, torchvision also provides some of the state of the art pretrained models.</p>
+<p>The <code>torch.nn</code> contains the basic building blocks that we need to construct our model. For example, if we need to construct a <strong>Convolutional Layer</strong>, we can call the function <code>torch.nn.Conv2d()</code> to construct that layer.</p>
+<p>And if we want linear layer that perform the equation of $y = W^TX + b$, we can call the function <code>torch.nn.Linear()</code>.</p>
+<p>If you would like to know more about <code>torch.nn</code> library, please visit this <a href="https://pytorch.org/docs/stable/nn.html">link</a> for more information. Also, this <a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html">post</a> provides better understanding of <code>torch.nn</code> module.</p>
 
 </div>
 </div>
@@ -235,9 +233,8 @@ For example, if we need to construct a <strong>Convolutional Layer</strong>, we 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you would like to change from CPU to GPU,
-Select the <code>Runtime --&gt; Change Runtime type</code> and select <code>GPU</code>.</p>
-<p>After done selecting, we can check whether we are running GPU or CPU with the following function.</p>
-<p>If the output show <code>cuda:0</code>, then the <code>GPU</code> is in used.</p>
+select the <code>Runtime --&gt; Change Runtime type</code> and select <code>GPU</code>.</p>
+<p>After done selecting, we can check whether we are running GPU or CPU by using the following function:</p>
 
 </div>
 </div>
@@ -277,13 +274,21 @@ Select the <code>Runtime --&gt; Change Runtime type</code> and select <code>GPU<
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>If the output show <code>cuda:0</code>, then the <code>GPU</code> is in used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Dataset">
 <a class="anchor" href="#Dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset<a class="anchor-link" href="#Dataset"> </a>
 </h1>
 <p>In this notebook, we will use <code>CIFAR10</code> dataset for classification.</p>
 <p><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a> is a public classification dataset, which consists of 60,000 32 * 32 color images in 10 classes. There are 50,000 training images and 10,000 testing images.</p>
-<p>In the following cell, we will do data augmentation for the dataset. When doing <strong>trasnforms</strong> on the test dataset, we only Normalize the input, that is because we do not need to augment(change) our test dataset to see the result.</p>
-<p>Tensor is just like Numpy's ndarray, except that it can done calculation on GPU, and is modified to fit the training neural network procedure.</p>
+<p>In the following cell, we will do data augmentation for the dataset. When doing <strong>trasnforms</strong> on the test dataset, we only <em>normalize</em> the input, that is because we do not need to augment(change) our test dataset to see the result.</p>
+<p>Tensor is just like Numpy's ndarray, except that it can do calculations on GPU, and is modified to fit the training neural network procedure.</p>
 
 </div>
 </div>
@@ -348,12 +353,12 @@ Files already downloaded and verified
 <p></p>
 <div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
-    <strong>Note: </strong>Pytorch store the image dataset in the following format:
+    <strong>Note: </strong>Pytorch stores the image dataset in the following format:
 </div>
 <code>batch_size * dim * height * width (B*D*H*W)</code>.
-<p>Batch_size mean Number of images for one training iteration.
-Dim mean the image dimension. Conventionally, color image have the dimension of <em>3</em> and gray scale image have the dimension of <em>1</em>.</p>
-<p>The label value for the dataset range from <code>0~9</code>. eg. If the label is <em>7</em>, then, it would be <strong>class_names[7] = horse</strong>.</p>
+<p><code>batch_size</code> means number of images for one training iteration.</p>
+<p><code>dim</code> means the image dimension. Conventionally, color images have the dimension of <em>3</em> and gray scale images have the dimension of <em>1</em>.</p>
+<p>The label value for the dataset ranges from <code>0~9</code>. e.g., if the label is <em>7</em>, then, it would be <strong>class_names[7] = horse</strong>.</p>
 
 </div>
 </div>
@@ -384,7 +389,7 @@ Dim mean the image dimension. Conventionally, color image have the dimension of 
 <h2 id="Dataset-and-DataLoader">
 <a class="anchor" href="#Dataset-and-DataLoader" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset and DataLoader<a class="anchor-link" href="#Dataset-and-DataLoader"> </a>
 </h2>
-<p>Dataset play the huge role in machine learning and deep learning. For the computer vision task, we could do data augmentation to get the effect of regulating the model, avoid being overfitting. And when training, the augmented dataset need to be fetched by the data loader. The main duty of the dataloader is to prepare dataset before feeding to the neural network.</p>
+<p>Dataset plays the huge role in machine learning and deep learning. For the computer vision task, we can do data augmentation to get the effect of regulating the model, avoid being overfitting. And when training, the augmented dataset needs to be fetched by the data loader. The main duty of the dataloader is to prepare dataset before feeding into the neural network.</p>
 <p>Dataloader object is a generator object, which can be accessed through iteration.</p>
 
 </div>
@@ -436,9 +441,9 @@ Dim mean the image dimension. Conventionally, color image have the dimension of 
 <h1 id="Model">
 <a class="anchor" href="#Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model<a class="anchor-link" href="#Model"> </a>
 </h1>
-<p>Let's built a simple Convolutional Neural Network.</p>
-<p>When flattening the network, we can use the equation:<br>
-$O = \frac{W-K+2P}{S} + 1$</p>
+<p>Let's build a simple Convolutional Neural Network.</p>
+<p>When flattening the network, we can use the equation:</p>
+<p>$O = \frac{W-K+2P}{S} + 1$</p>
 
 </div>
 </div>
