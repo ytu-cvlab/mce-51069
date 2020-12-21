@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Assignment | McE-51069</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Assignment" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Study Artificial Intelligence from Theory-oriented to Practical Approach" />
+<meta property="og:description" content="Study Artificial Intelligence from Theory-oriented to Practical Approach" />
+<link rel="canonical" href="https://ytu-cvlab.github.io/mce-51069/2020/12/20/Day_3_notebook.html" />
+<meta property="og:url" content="https://ytu-cvlab.github.io/mce-51069/2020/12/20/Day_3_notebook.html" />
+<meta property="og:site_name" content="McE-51069" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-20T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://ytu-cvlab.github.io/mce-51069/2020/12/20/Day_3_notebook.html","@type":"BlogPosting","headline":"Assignment","dateModified":"2020-12-20T00:00:00-06:00","datePublished":"2020-12-20T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ytu-cvlab.github.io/mce-51069/2020/12/20/Day_3_notebook.html"},"description":"Study Artificial Intelligence from Theory-oriented to Practical Approach","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/mce-51069/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ytu-cvlab.github.io/mce-51069/feed.xml" title="McE-51069" /><link rel="shortcut icon" type="image/x-icon" href="/mce-51069/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/mce-51069/">McE-51069</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/mce-51069/about/">About Us</a><a class="page-link" href="/mce-51069/search/">Search</a><a class="page-link" href="/mce-51069/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Assignment</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-20T00:00:00-06:00" itemprop="datePublished">
+        Dec 20, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      11 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/ytu-cvlab/mce-51069/tree/master/_notebooks/Day_3_notebook.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/mce-51069/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/ytu-cvlab/mce-51069/blob/master/_notebooks/Day_3_notebook.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/mce-51069/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Day_3_notebook.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Import-Necessary-Libraries">Import Necessary Libraries<a class="anchor-link" href="#Import-Necessary-Libraries"> </a></h1><p>Pytorch is the open source machine learning framework that we can use for research to production.</p>
+<p>If you would like to study the tutorial from the offical <a href="https://pytorch.org/">pytorch</a> website, please visit <a href="https://pytorch.org/tutorials/">this link</a>.</p>
+<p>The source code for the entire pytorch framework can be found <a href="https://github.com/pytorch">here</a>.</p>
+<blockquote><p>SideNote:pytorch seperate different task into different module. eg. there is a package called <strong>torchaudio</strong> that focus on audio alone.</p>
+</blockquote>
+<p>Today we will use torchvision, which is the package inside torch, that focus on vision task. For example, for data augmentation, torchvision provide the function called <strong>transforms</strong>. And if you would like to use transfer learning, torchvision also provide some of the state of the art model pretrained available.</p>
+<p>torch.nn contain the basic building blocks that we need to construct our model.<br />
+For example, if we need to construct a <strong>Convolutional Layer</strong>, we could call the function of <code>torch.nn.Conv2d()</code> to construct that layer.</p>
+<p>And if we want linear layer that perform the equation of $y = W^TX + b$, we could call for the function of <code>torch.nn.Linear()</code>.</p>
+<p>If you would like to know more about <code>torch.nn</code> library, please visit this <a href="https://pytorch.org/docs/stable/nn.html">link</a> for more information. Also, this <a href="https://pytorch.org/tutorials/beginner/nn_tutorial.html">post</a> provide better understanding for <code>torch.nn</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Main-Components">Main Components<a class="anchor-link" href="#Main-Components"> </a></h1><p>Let's preview what will be built in this notebook.</p>
+<ol>
+<li>Dataset <ul>
+<li>cifar10</li>
+</ul>
+</li>
+<li>Model Architecture<ul>
+<li>Simple Model</li>
+</ul>
+</li>
+<li>Loss (Update model)<ul>
+<li>Categorical Loss Entropy</li>
+</ul>
+</li>
+<li>Optimizer (Regularizer)<ul>
+<li>Adam Optimizer</li>
+</ul>
+</li>
+<li>Metrics (Visual for User)<ul>
+<li>Loss, Accuracy</li>
+</ul>
+</li>
+<li>Save Model<ul>
+<li>Model Checkpoint</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you would like to change from CPU to GPU,
+Select the <code>Runtime --&gt; Change Runtime type</code> and select <code>GPU</code>.</p>
+<p>After done selecting, we can check whether we are running GPU or CPU with the following function.</p>
+<p>If the output show <code>cuda:0</code>, then the <code>GPU</code> is in used.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda:0&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>cuda:0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Dataset">Dataset<a class="anchor-link" href="#Dataset"> </a></h1><p>In this notebook, we will use <code>CIFAR10</code> dataset for classification.</p>
+<p><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a> is a public classification dataset, which consists of 60,000 32 * 32 color images in 10 classes. There are 50,000 training images and 10,000 testing images.</p>
+<p>In the following cell, we will do data augmentation for the dataset. When doing <strong>trasnforms</strong> on the test dataset, we only Normalize the input, that is because we do not need to augment(change) our test dataset to see the result.</p>
+<p>Tensor is just like Numpy's ndarray, except that it can done calculation on GPU, and is modified to fit the training neural network procedure.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;airplane&#39;</span><span class="p">,</span> <span class="s1">&#39;automobile&#39;</span><span class="p">,</span> <span class="s1">&#39;bird&#39;</span><span class="p">,</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;deer&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;frog&#39;</span><span class="p">,</span> <span class="s1">&#39;horse&#39;</span><span class="p">,</span> <span class="s1">&#39;ship&#39;</span><span class="p">,</span> <span class="s1">&#39;truck&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># Image Normalization, Data Augmentation</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,)),</span>
+                                <span class="n">transforms</span><span class="o">.</span><span class="n">RandomRotation</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+                                <span class="p">])</span>
+
+<span class="n">test_transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+                                     <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+                                     <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,))</span>
+<span class="p">])</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>
+        <span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">CIFAR10</span><span class="p">(</span>
+        <span class="s1">&#39;./data&#39;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">test_transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to ./data/cifar-10-python.tar.gz
+Extracting ./data/cifar-10-python.tar.gz to ./data
+Files already downloaded and verified
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>Pytorch store the image dataset in the following format:
+</div><code>batch_size * dim * height * width (B*D*H*W)</code>.</p>
+<p>Batch_size mean Number of images for one training iteration.
+Dim mean the image dimension. Conventionally, color image have the dimension of <em>3</em> and gray scale image have the dimension of <em>1</em>.</p>
+<p>The label value for the dataset range from <code>0~9</code>. eg. If the label is <em>7</em>, then, it would be <strong>class_names[7] = horse</strong>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the total number of images in train_dataset</span>
+
+
+<span class="c1"># Plot training Image and print label</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dataset-and-DataLoader">Dataset and DataLoader<a class="anchor-link" href="#Dataset-and-DataLoader"> </a></h2><p>Dataset play the huge role in machine learning and deep learning. For the computer vision task, we could do data augmentation to get the effect of regulating the model, avoid being overfitting. And when training, the augmented dataset need to be fetched by the data loader. The main duty of the dataloader is to prepare dataset before feeding to the neural network.</p>
+<p>Dataloader object is a generator object, which can be accessed through iteration.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                           <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">test_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                           <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Explain Generator</span>
+
+<span class="c1"># Access train_loader</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Model">Model<a class="anchor-link" href="#Model"> </a></h1><p>flatten equation here.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">SampleModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SampleModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="o">*</span><span class="mi">128</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc4</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="o">*</span><span class="mi">128</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SampleModel</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+
+<span class="c1"># Define Loss</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="c1"># Define Optimizer</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test Model</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tensor([[-0.0592, -0.0659,  0.0515,  0.0013,  0.0012, -0.0716, -0.1198,  0.0276,
+         -0.0834, -0.0727]], device=&#39;cuda:0&#39;, grad_fn=&lt;AddmmBackward&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">EPOCH</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">EPOCH</span><span class="p">):</span>
+    <span class="n">loss_epoch</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total_imgs</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+        <span class="n">imgs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="c1"># Clear-out Gradients</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+
+        <span class="c1"># Predict from the input images</span>
+        <span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+
+        <span class="c1"># Calculate Loss</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">predicts</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+        <span class="c1"># Calculate Gradient</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="c1"># Update Model Parameters</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+        <span class="c1"># log loss for evaluate model training performance.</span>
+        <span class="n">loss_epoch</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+        <span class="n">total_imgs</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+        <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predicts</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+    
+    <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">correct</span><span class="o">/</span><span class="n">total_imgs</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EPOCH : </span><span class="si">{</span><span class="n">epoch</span><span class="si">}</span><span class="s2">, Acc : </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Loss : </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Play with model.state_dict</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Checkpoint</span>
+<span class="n">ckpt_path</span> <span class="o">=</span> <span class="s1">&#39;checkpoint.pt&#39;</span>
+
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">ckpt_path</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">SampleModel</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ckpt_path</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;All keys matched successfully&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">num_correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">):</span>
+        <span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+        <span class="n">predict</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">predict_class</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predict</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="p">(</span><span class="n">predict_class</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span>
+
+
+        <span class="n">num_correct</span> <span class="o">+=</span> <span class="n">correct</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        <span class="n">num_total</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">num_correct</span><span class="p">,</span> <span class="n">num_total</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7093 10000
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy : &quot;</span><span class="p">,</span> <span class="n">num_correct</span><span class="o">/</span><span class="n">num_total</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Accuracy :  0.7093
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_model</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">test_loader</span><span class="p">))</span>
+    <span class="n">imgs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">predicts</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">imgs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">predicts</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">predicts</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">titles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">index</span><span class="p">:</span>
+        <span class="n">titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">titles</span><span class="p">)):</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Predict : </span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">, Actual : </span><span class="si">{</span><span class="n">class_names</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">class_names</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]]:</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span>
+        <span class="k">else</span><span class="p">:</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="n">color</span><span class="p">})</span>
+
+<span class="n">test_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># for keys in model.state_dict().keys():</span>
+<span class="c1">#     print(model.state_dict()[keys][0].size())</span>
+<span class="c1">#     break</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>torch.Size([3, 3, 3])
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">para</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">para</span><span class="p">)</span>
+    <span class="k">break</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Parameter containing:
+tensor([[[[ 2.3215e-01,  2.0419e-01,  4.2240e-02],
+          [-3.3232e-02, -1.5834e-01, -1.9737e-01],
+          [ 9.2394e-03,  6.6951e-03, -1.2196e-01]],
+
+         [[ 2.2080e-01, -2.1118e-01, -9.3750e-02],
+          [ 3.2431e-01, -2.5445e-01, -3.2125e-01],
+          [ 1.3205e-01, -1.7618e-02,  1.6405e-01]],
+
+         [[ 1.3898e-01, -3.7363e-02, -2.2293e-01],
+          [ 3.2078e-01,  1.1056e-01, -2.4803e-01],
+          [ 5.0951e-02,  5.9602e-02, -1.5520e-01]]],
+
+
+        [[[ 2.5950e-02,  5.2803e-02,  7.7920e-02],
+          [-1.5744e-01, -4.3858e-02,  5.6683e-02],
+          [-1.8136e-01, -1.7563e-01,  5.2740e-02]],
+
+         [[ 1.3409e-01, -6.7186e-02, -1.1992e-01],
+          [ 1.2734e-01,  4.8525e-02,  5.6192e-02],
+          [ 1.6478e-01,  1.2412e-01,  3.9414e-02]],
+
+         [[ 1.4186e-01, -1.9087e-01, -9.0230e-02],
+          [ 5.3212e-02, -8.3791e-02, -4.6281e-02],
+          [-1.0397e-02, -8.7347e-02,  8.1140e-02]]],
+
+
+        [[[-6.9373e-02, -2.5458e-01, -8.6400e-04],
+          [ 1.8783e-01, -2.6380e-01,  2.2461e-01],
+          [-1.2932e-01, -1.0296e-02, -1.9375e-01]],
+
+         [[-1.4424e-02,  1.2672e-01,  2.3532e-01],
+          [ 3.1694e-01,  4.5086e-02,  2.6087e-01],
+          [ 7.0701e-02,  1.1060e-01,  1.0963e-01]],
+
+         [[ 7.9046e-04, -1.8165e-01, -9.6108e-02],
+          [ 1.9747e-01, -2.7985e-01,  5.4228e-02],
+          [-2.6039e-02, -2.3649e-01, -1.4393e-01]]],
+
+
+        [[[-3.2754e-02, -1.9122e-01, -2.3063e-01],
+          [-5.6237e-02, -1.3146e-01, -8.3482e-02],
+          [ 2.3585e-01, -2.9289e-02,  1.7713e-01]],
+
+         [[-8.5248e-02, -1.0822e-01, -1.8120e-01],
+          [ 2.4943e-02, -8.5943e-02,  5.5019e-02],
+          [ 1.6779e-01,  1.4855e-01, -1.4976e-01]],
+
+         [[ 7.1340e-02,  1.3175e-01, -2.8268e-02],
+          [ 1.8614e-01,  1.5634e-01, -8.3304e-02],
+          [-8.1832e-02,  4.7499e-02,  6.6456e-02]]],
+
+
+        [[[ 1.2166e-01,  9.9986e-02, -1.6004e-01],
+          [-4.5203e-02,  1.0396e-02,  1.5677e-01],
+          [ 2.0098e-01,  2.0339e-01,  4.6329e-02]],
+
+         [[-1.1168e-01, -1.8078e-01, -3.2637e-01],
+          [ 1.7462e-01, -9.1871e-02, -2.2482e-01],
+          [ 1.1809e-01, -4.1474e-03,  4.2896e-02]],
+
+         [[ 1.2007e-01, -8.2610e-02, -1.6517e-02],
+          [ 1.6808e-01,  2.7088e-02, -2.2563e-02],
+          [-8.4696e-02,  5.7172e-02, -1.3711e-01]]],
+
+
+        [[[ 2.2402e-01,  2.5076e-01,  1.6317e-01],
+          [ 1.0900e-01, -9.8519e-02,  1.7761e-03],
+          [-2.7461e-01, -2.6183e-01, -7.8722e-03]],
+
+         [[ 2.1017e-02, -8.6525e-02,  1.8395e-01],
+          [-8.6464e-02,  1.3578e-01,  1.0532e-01],
+          [ 5.7059e-02,  6.1087e-02, -1.7708e-01]],
+
+         [[ 1.1629e-01, -2.4173e-01, -1.9128e-02],
+          [-2.1499e-01, -1.4695e-01, -1.5178e-01],
+          [ 6.5198e-02,  1.6998e-01,  9.7582e-02]]],
+
+
+        [[[-1.4348e-01, -2.0194e-01, -1.3704e-01],
+          [ 9.2178e-03,  1.6691e-01,  1.4456e-01],
+          [-3.4138e-02, -2.8308e-02,  1.7862e-01]],
+
+         [[-1.8474e-01, -2.2731e-01, -9.4043e-02],
+          [-9.7433e-02, -1.6319e-01,  2.6452e-01],
+          [ 1.6387e-01,  7.8973e-02,  1.6384e-01]],
+
+         [[-1.0470e-01,  6.8198e-02, -1.9770e-01],
+          [-1.7913e-01,  9.7672e-02, -4.7644e-02],
+          [ 5.3101e-02, -1.0141e-02, -2.6031e-02]]],
+
+
+        [[[ 2.4392e-01, -9.5394e-02,  1.9207e-01],
+          [ 1.1503e-01,  8.9042e-02, -1.1500e-01],
+          [ 1.8628e-01, -1.0263e-01, -6.0310e-02]],
+
+         [[-1.1879e-01,  5.2480e-02,  1.5410e-01],
+          [-1.8632e-02, -9.3179e-02, -4.5682e-02],
+          [-7.4974e-02,  1.2718e-01, -4.0769e-02]],
+
+         [[-5.8214e-02, -8.4523e-02, -1.9316e-01],
+          [-6.7754e-03, -7.4140e-02, -1.7855e-01],
+          [ 3.1239e-02, -6.6621e-02,  1.9692e-01]]],
+
+
+        [[[ 4.2411e-02,  1.5880e-01, -2.8779e-01],
+          [ 2.0978e-02,  5.7322e-02, -1.8447e-01],
+          [ 4.0361e-02, -4.8981e-02,  1.7259e-01]],
+
+         [[ 5.5497e-03,  1.5398e-01, -2.1704e-01],
+          [ 1.7009e-01, -3.2526e-02, -2.1722e-01],
+          [ 8.5330e-02, -7.8401e-02,  9.1924e-02]],
+
+         [[ 2.2346e-01,  1.9866e-01, -1.8047e-01],
+          [-6.4676e-02, -2.7367e-02, -1.1454e-01],
+          [ 1.2826e-01, -2.1752e-01, -1.6688e-02]]],
+
+
+        [[[ 2.7657e-02, -4.0516e-02, -1.0361e-03],
+          [ 2.0807e-01,  2.6287e-02,  2.7082e-02],
+          [ 1.4024e-01, -6.5587e-02, -1.2793e-01]],
+
+         [[-1.1876e-02, -2.0337e-02,  1.3059e-01],
+          [-1.5949e-01, -1.5180e-01, -3.5323e-02],
+          [ 1.4117e-01,  1.1590e-01,  1.3226e-01]],
+
+         [[-1.8374e-01,  1.3124e-01,  2.0801e-01],
+          [ 3.3276e-03, -2.0724e-01,  5.0236e-02],
+          [-1.9292e-01,  9.9185e-02,  4.9314e-02]]],
+
+
+        [[[ 1.1641e-01,  2.8429e-01, -5.7221e-02],
+          [ 2.8338e-01,  1.1308e-01, -2.2689e-01],
+          [ 6.1291e-02, -2.1020e-01, -6.9359e-02]],
+
+         [[ 6.9814e-02, -6.9957e-02,  3.5122e-02],
+          [-2.4733e-01, -1.3071e-02, -1.8154e-01],
+          [ 5.5515e-02, -7.9309e-02, -1.9371e-03]],
+
+         [[-1.3429e-01, -1.1548e-01,  1.2919e-01],
+          [ 9.4122e-03, -1.5425e-01,  2.2758e-01],
+          [-6.4824e-02, -2.7215e-03,  1.9004e-01]]],
+
+
+        [[[ 1.1596e-01,  2.0792e-01,  1.5949e-01],
+          [-2.0742e-01, -2.5857e-02, -2.7014e-01],
+          [ 1.9950e-02, -2.5838e-01, -2.9521e-02]],
+
+         [[ 9.0573e-02,  2.2321e-01,  1.0467e-01],
+          [ 9.8991e-02, -1.0410e-01, -3.5681e-02],
+          [-1.7817e-01,  1.2032e-02, -6.8998e-03]],
+
+         [[ 1.0905e-01,  1.4550e-01,  5.9198e-02],
+          [-3.6169e-02,  3.3978e-02,  1.1500e-02],
+          [-8.0604e-02,  6.4748e-02, -1.7296e-01]]],
+
+
+        [[[ 1.9156e-01,  3.6232e-02,  3.9933e-02],
+          [ 1.3143e-01,  1.3580e-01,  5.6195e-02],
+          [ 1.2754e-01, -5.8888e-02,  1.6175e-01]],
+
+         [[-9.2636e-03, -2.7249e-01,  1.9131e-03],
+          [-3.4791e-02, -3.8678e-02,  7.7213e-02],
+          [ 1.9437e-02, -8.1304e-04,  1.0860e-01]],
+
+         [[-7.4227e-02, -2.9667e-01, -1.8669e-01],
+          [ 1.3033e-01, -6.9908e-02, -1.7484e-01],
+          [ 1.6550e-01,  1.8214e-01,  4.2868e-03]]],
+
+
+        [[[-3.4597e-01, -6.4491e-02,  8.6391e-02],
+          [ 2.0041e-02,  3.1933e-03, -9.9984e-02],
+          [-1.8055e-01,  3.6174e-02,  1.1207e-01]],
+
+         [[ 2.7676e-02,  1.1109e-01,  1.7921e-01],
+          [-2.7897e-01, -6.6218e-02,  2.0618e-01],
+          [-5.1501e-02,  1.2802e-02, -4.0831e-02]],
+
+         [[-1.4227e-02, -6.5318e-02,  2.4351e-01],
+          [ 8.4946e-02,  2.5080e-01,  7.2864e-02],
+          [-2.1508e-01,  1.4168e-01,  1.1156e-01]]],
+
+
+        [[[-2.7315e-01, -1.5840e-01, -1.3897e-01],
+          [ 3.5393e-01, -1.1512e-01,  4.4021e-02],
+          [ 1.5997e-01,  1.9453e-01, -5.1432e-02]],
+
+         [[ 1.3074e-01, -1.6536e-01,  2.0374e-01],
+          [ 2.2642e-01,  1.3216e-01, -2.1190e-01],
+          [-3.2069e-01,  6.5614e-02,  5.1511e-02]],
+
+         [[-1.0564e-01,  1.6759e-01,  6.6717e-02],
+          [ 1.3943e-01, -1.1089e-01,  3.4813e-02],
+          [-1.5008e-01, -2.4329e-01,  1.4515e-01]]],
+
+
+        [[[-1.5493e-01, -2.3981e-01, -5.9494e-02],
+          [ 2.8855e-02,  5.0430e-02,  1.2113e-01],
+          [-1.1919e-01,  6.5203e-02, -2.5672e-02]],
+
+         [[-1.0381e-01, -2.1775e-01,  2.0505e-01],
+          [ 1.6922e-01,  1.0035e-01,  2.8327e-02],
+          [ 5.2868e-02,  1.5010e-01,  2.1638e-02]],
+
+         [[-1.2910e-01, -9.5600e-02,  5.3918e-02],
+          [ 2.0552e-01,  1.9346e-01, -1.1648e-01],
+          [ 5.6756e-02, -1.4274e-01, -1.5056e-01]]],
+
+
+        [[[-8.2327e-02, -9.3901e-02, -4.8141e-02],
+          [ 3.1528e-02,  2.1021e-02, -1.5327e-01],
+          [ 1.0292e-01,  3.0119e-01,  2.6465e-01]],
+
+         [[ 8.4558e-02, -8.0231e-02, -1.2912e-01],
+          [-2.1422e-01, -2.6993e-01, -2.8868e-02],
+          [-1.4760e-01, -8.3931e-02, -1.5421e-01]],
+
+         [[-3.2288e-02,  1.6596e-01,  1.8420e-01],
+          [ 2.3189e-01, -1.0286e-01,  5.4261e-02],
+          [ 1.6242e-01, -1.3939e-02, -9.0403e-02]]],
+
+
+        [[[ 8.8287e-02,  2.2704e-02,  1.1889e-01],
+          [-1.4016e-01,  1.6232e-01, -1.3594e-01],
+          [-7.1590e-02,  6.1534e-02, -2.0556e-01]],
+
+         [[ 9.1107e-03, -6.5639e-02, -6.2401e-02],
+          [-1.4755e-01,  1.4659e-02,  1.2259e-01],
+          [-2.7832e-02, -1.0374e-01, -2.1196e-01]],
+
+         [[ 7.7539e-02, -8.0924e-02,  8.7397e-02],
+          [ 9.0398e-02, -6.2985e-02,  3.8269e-02],
+          [ 2.0673e-02, -6.9138e-02, -2.0018e-01]]],
+
+
+        [[[-1.5526e-01, -1.3273e-01,  1.2932e-01],
+          [ 8.7198e-02, -2.4544e-01, -1.3476e-01],
+          [ 8.3889e-02, -2.6201e-01, -1.9432e-01]],
+
+         [[ 1.1305e-01, -1.1591e-02,  1.1961e-01],
+          [-5.8199e-02,  8.3581e-02, -1.6034e-01],
+          [ 9.1651e-02, -7.8802e-03,  1.7245e-01]],
+
+         [[ 1.5637e-01,  4.4273e-02,  5.8788e-02],
+          [-7.2027e-02,  1.7393e-01, -3.4522e-02],
+          [-9.1368e-02,  1.8394e-02,  1.8882e-01]]],
+
+
+        [[[ 2.2810e-03, -1.9859e-01, -1.3665e-01],
+          [ 3.8695e-02, -1.4394e-01, -7.2168e-02],
+          [ 1.9542e-01,  2.2462e-01,  4.1993e-03]],
+
+         [[-7.3823e-02,  4.6804e-02, -1.4654e-01],
+          [ 1.1500e-02,  1.9237e-02,  1.2135e-01],
+          [ 1.0868e-01,  2.5377e-01, -8.1291e-02]],
+
+         [[ 5.2479e-02, -1.7020e-01, -2.5391e-02],
+          [ 6.3932e-02, -9.7910e-03,  1.9663e-02],
+          [-9.0780e-03, -1.2220e-02, -1.5367e-01]]],
+
+
+        [[[ 1.2542e-01, -9.6849e-02, -1.7263e-04],
+          [ 2.2450e-01, -2.7642e-01,  4.6498e-02],
+          [-8.7983e-02, -1.5628e-01,  1.5639e-01]],
+
+         [[-6.3336e-02,  1.0357e-01,  1.1636e-01],
+          [ 2.6330e-01, -2.2914e-01,  1.3325e-01],
+          [ 2.1708e-02, -2.0228e-01, -1.3225e-01]],
+
+         [[-1.5373e-01, -6.6220e-03, -3.5076e-02],
+          [ 1.1398e-01,  8.8552e-02,  6.4435e-02],
+          [-6.2612e-02,  1.2182e-02,  9.1955e-02]]],
+
+
+        [[[ 1.7319e-01,  2.2304e-01, -1.3435e-01],
+          [ 1.3570e-01, -2.2135e-01, -2.5045e-01],
+          [ 1.2161e-01, -7.7850e-02, -1.2438e-01]],
+
+         [[ 1.8151e-01, -2.2492e-03, -1.6692e-01],
+          [ 4.4226e-02, -2.5964e-01, -1.8513e-01],
+          [-1.7692e-01,  1.9373e-03, -1.1503e-01]],
+
+         [[ 1.9476e-01, -5.2836e-02,  1.0130e-01],
+          [ 1.6140e-01,  3.0431e-03,  9.1969e-02],
+          [-5.9257e-02, -8.0371e-02,  1.4264e-02]]],
+
+
+        [[[-9.3995e-02, -3.3832e-01,  6.0817e-02],
+          [-7.8652e-02, -2.1362e-01, -1.2693e-01],
+          [ 2.0193e-01,  1.6084e-01,  1.5566e-01]],
+
+         [[ 6.9697e-02, -1.3390e-01,  7.9673e-02],
+          [ 1.4704e-01, -1.4512e-01, -4.9223e-02],
+          [-2.1194e-02,  2.1103e-01,  1.9704e-01]],
+
+         [[ 9.9022e-02, -7.7407e-02,  1.4038e-01],
+          [ 2.6901e-02, -7.2845e-04, -7.9134e-02],
+          [ 1.1369e-01, -1.1911e-01,  1.8706e-01]]],
+
+
+        [[[-4.5222e-02, -1.2725e-01, -2.2317e-01],
+          [ 2.1035e-01,  3.5107e-01,  8.3545e-02],
+          [-3.1721e-01, -2.1740e-02,  5.2067e-02]],
+
+         [[ 9.8712e-02,  7.4487e-02, -1.1261e-01],
+          [-8.0043e-02,  1.5100e-01, -1.5260e-01],
+          [-3.4477e-01,  2.1647e-01,  1.5788e-01]],
+
+         [[-4.4053e-02,  1.5992e-01, -2.8235e-01],
+          [ 4.9598e-02,  7.6907e-02, -7.8735e-03],
+          [-1.1113e-01,  1.4687e-01, -1.9393e-02]]],
+
+
+        [[[-1.3357e-01,  5.2197e-02, -5.6615e-02],
+          [ 5.2445e-02,  2.3342e-01, -6.1963e-03],
+          [ 1.7077e-01,  4.7119e-02,  1.1130e-01]],
+
+         [[-1.8154e-01,  1.9280e-01,  2.5261e-01],
+          [-1.5167e-02, -3.8339e-02, -2.2708e-01],
+          [ 5.7144e-02,  1.0457e-01, -1.8280e-01]],
+
+         [[-1.6301e-01, -6.1676e-02,  1.8483e-01],
+          [-3.0017e-02, -1.7651e-01, -1.0511e-01],
+          [ 9.7214e-02, -1.8037e-01, -1.3815e-01]]],
+
+
+        [[[-2.6908e-01,  8.0695e-02,  1.6079e-01],
+          [-2.0838e-01,  4.4948e-02,  2.2436e-01],
+          [ 3.5603e-02, -3.8921e-02, -3.3163e-02]],
+
+         [[-3.4746e-01, -8.9763e-02,  2.5419e-01],
+          [-2.7009e-01,  2.0228e-02,  1.1156e-01],
+          [ 9.4169e-02,  5.4917e-02,  1.8037e-01]],
+
+         [[-1.8009e-01, -8.7064e-02,  1.0798e-01],
+          [ 6.5133e-02, -1.5944e-01, -6.3506e-02],
+          [ 2.3644e-02,  1.9850e-02,  2.2501e-01]]],
+
+
+        [[[-6.7694e-02,  9.7592e-02,  2.6929e-02],
+          [ 1.2319e-02, -1.0990e-01, -1.3190e-01],
+          [ 9.5644e-02,  1.6074e-01, -6.6587e-02]],
+
+         [[ 1.6444e-02,  2.3812e-01, -5.4745e-02],
+          [-2.3074e-01, -2.5376e-02,  1.2963e-01],
+          [ 4.9391e-02,  1.2972e-01, -1.8905e-01]],
+
+         [[-2.7918e-01,  1.0772e-01, -1.6010e-01],
+          [-2.4862e-01,  2.1904e-01, -2.7264e-02],
+          [ 1.2471e-01,  7.3914e-02,  1.4345e-01]]],
+
+
+        [[[-1.5042e-01, -8.9947e-02,  7.7275e-02],
+          [ 1.3323e-01, -1.0741e-02,  2.1720e-01],
+          [ 6.4374e-02, -6.9293e-02,  1.0375e-01]],
+
+         [[-1.8615e-01, -7.9747e-02, -1.0683e-01],
+          [ 7.0128e-03, -1.9525e-01,  2.0402e-01],
+          [-1.7059e-01,  7.4086e-02, -4.0652e-02]],
+
+         [[-1.9827e-01, -1.7677e-01,  1.4976e-01],
+          [-1.9629e-01,  1.5015e-01,  2.3167e-01],
+          [ 6.6559e-02,  1.7448e-01,  3.6060e-03]]],
+
+
+        [[[-1.8403e-01, -1.6223e-01, -1.1188e-01],
+          [ 1.7087e-01, -2.0795e-01, -5.6447e-02],
+          [ 2.6930e-01,  2.0140e-01, -1.3756e-01]],
+
+         [[-2.1104e-01, -2.3504e-01,  4.7322e-02],
+          [ 1.2341e-01,  1.7420e-01, -1.4753e-01],
+          [ 9.3560e-02, -1.2166e-01,  1.0472e-01]],
+
+         [[-1.2245e-01, -1.5955e-01,  2.0581e-02],
+          [-1.1452e-01,  1.1960e-01, -2.1869e-01],
+          [ 2.4602e-01,  2.9615e-01,  1.8071e-01]]],
+
+
+        [[[ 1.5756e-01, -2.6742e-02,  1.5958e-01],
+          [-1.2780e-01,  1.6865e-01,  1.0091e-01],
+          [-7.5140e-02, -9.0447e-02,  1.2102e-01]],
+
+         [[ 1.4381e-01,  1.7956e-01,  8.2809e-02],
+          [-2.7492e-01, -2.0018e-01, -1.3979e-02],
+          [-2.4221e-01,  7.7876e-02, -9.0911e-02]],
+
+         [[-2.4535e-02,  9.5031e-02,  2.4307e-01],
+          [-9.6001e-02, -6.2628e-02, -1.0279e-01],
+          [-2.5254e-02, -1.5724e-01,  7.6688e-02]]],
+
+
+        [[[ 9.4032e-02, -6.6127e-02,  1.0485e-01],
+          [-2.0890e-01,  3.9560e-02, -1.0555e-01],
+          [-1.8473e-02,  1.3701e-01,  7.5034e-02]],
+
+         [[-9.6231e-02, -2.3220e-02,  1.0588e-01],
+          [ 1.0188e-01,  7.7048e-02, -2.4611e-01],
+          [ 1.1062e-01, -1.3436e-01, -3.1984e-02]],
+
+         [[ 1.4574e-01, -1.5126e-01, -1.9182e-01],
+          [ 1.2857e-01, -1.5674e-01, -1.4092e-01],
+          [ 2.2757e-01,  1.2435e-01,  3.7184e-02]]],
+
+
+        [[[ 9.7299e-02, -9.8561e-02, -2.3273e-01],
+          [ 3.3047e-02,  1.4070e-01,  2.0471e-02],
+          [ 1.0667e-01,  1.5260e-01, -1.7187e-01]],
+
+         [[-6.3543e-02, -1.1900e-01, -1.2490e-01],
+          [ 1.6052e-01, -1.7841e-01,  3.3927e-02],
+          [ 1.2718e-01, -1.3699e-01, -2.2257e-01]],
+
+         [[ 2.3987e-01,  2.3859e-01,  1.9424e-01],
+          [ 9.7812e-02,  2.1148e-01,  6.1874e-03],
+          [-3.4697e-02,  4.4572e-03, -2.2217e-01]]]], device=&#39;cuda:0&#39;,
+       requires_grad=True)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print(len(train_dataset))</span>
+
+<span class="c1"># # img_ind ~ 0~4,999</span>
+<span class="c1"># # </span>
+<span class="c1"># img_ind = 60</span>
+<span class="c1"># image = train_dataset[img_ind][0].numpy()</span>
+<span class="c1"># label = train_dataset[img_ind][1]</span>
+
+<span class="c1"># image = image.transpose(1, 2, 0)</span>
+<span class="c1"># print(class_names[label])</span>
+<span class="c1"># plt.imshow(image)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # Explain Generator</span>
+
+<span class="c1"># # Access train_loader</span>
+<span class="c1"># for data in train_loader:</span>
+<span class="c1">#     print(data[0].size())</span>
+<span class="c1">#     print(data[1].size())</span>
+<span class="c1">#     break</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # Test Model</span>
+<span class="c1"># input_images = torch.rand(1, 3, 32, 32).to(device)</span>
+<span class="c1"># prediction = model(input_images)</span>
+<span class="c1"># prediction</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"1d49b12207ba4585af31705400e3e08a": {"model_module": "@jupyter-widgets/controls", "model_name": "HBoxModel", "state": {"_view_name": "HBoxView", "_dom_classes": [], "_model_name": "HBoxModel", "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.5.0", "box_style": "", "layout": "IPY_MODEL_ddac44ab31ea4b679f9b4a2763db83fe", "_model_module": "@jupyter-widgets/controls", "children": ["IPY_MODEL_4dc3edc401ed49afbd8d191dac962a4d", "IPY_MODEL_31b3eba853914d2d8fd7653949352f21"]}}, "ddac44ab31ea4b679f9b4a2763db83fe": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}, "4dc3edc401ed49afbd8d191dac962a4d": {"model_module": "@jupyter-widgets/controls", "model_name": "FloatProgressModel", "state": {"_view_name": "ProgressView", "style": "IPY_MODEL_2aed722ad1434ee0b61668b75a9c5f4f", "_dom_classes": [], "description": "", "_model_name": "FloatProgressModel", "bar_style": "info", "max": 1, "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "value": 1, "_view_count": null, "_view_module_version": "1.5.0", "orientation": "horizontal", "min": 0, "description_tooltip": null, "_model_module": "@jupyter-widgets/controls", "layout": "IPY_MODEL_45b811ca63f5474fab7967950d8840f5"}}, "31b3eba853914d2d8fd7653949352f21": {"model_module": "@jupyter-widgets/controls", "model_name": "HTMLModel", "state": {"_view_name": "HTMLView", "style": "IPY_MODEL_de04880858954d1bbb7e16393f1d4f36", "_dom_classes": [], "description": "", "_model_name": "HTMLModel", "placeholder": "\u200b", "_view_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "value": " 170500096/? [00:20&lt;00:00, 33969903.97it/s]", "_view_count": null, "_view_module_version": "1.5.0", "description_tooltip": null, "_model_module": "@jupyter-widgets/controls", "layout": "IPY_MODEL_14645812df274c0e85ac0a042d660ff3"}}, "2aed722ad1434ee0b61668b75a9c5f4f": {"model_module": "@jupyter-widgets/controls", "model_name": "ProgressStyleModel", "state": {"_view_name": "StyleView", "_model_name": "ProgressStyleModel", "description_width": "initial", "_view_module": "@jupyter-widgets/base", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.2.0", "bar_color": null, "_model_module": "@jupyter-widgets/controls"}}, "45b811ca63f5474fab7967950d8840f5": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}, "de04880858954d1bbb7e16393f1d4f36": {"model_module": "@jupyter-widgets/controls", "model_name": "DescriptionStyleModel", "state": {"_view_name": "StyleView", "_model_name": "DescriptionStyleModel", "description_width": "", "_view_module": "@jupyter-widgets/base", "_model_module_version": "1.5.0", "_view_count": null, "_view_module_version": "1.2.0", "_model_module": "@jupyter-widgets/controls"}}, "14645812df274c0e85ac0a042d660ff3": {"model_module": "@jupyter-widgets/base", "model_name": "LayoutModel", "state": {"_view_name": "LayoutView", "grid_template_rows": null, "right": null, "justify_content": null, "_view_module": "@jupyter-widgets/base", "overflow": null, "_model_module_version": "1.2.0", "_view_count": null, "flex_flow": null, "width": null, "min_width": null, "border": null, "align_items": null, "bottom": null, "_model_module": "@jupyter-widgets/base", "top": null, "grid_column": null, "overflow_y": null, "overflow_x": null, "grid_auto_flow": null, "grid_area": null, "grid_template_columns": null, "flex": null, "_model_name": "LayoutModel", "justify_items": null, "grid_row": null, "max_height": null, "align_content": null, "visibility": null, "align_self": null, "height": null, "min_height": null, "padding": null, "grid_auto_rows": null, "grid_gap": null, "max_width": null, "order": null, "_view_module_version": "1.2.0", "grid_template_areas": null, "object_position": null, "object_fit": null, "grid_auto_columns": null, "margin": null, "display": null, "left": null}}}
+</script>
+
+
+
+  </div><a class="u-url" href="/mce-51069/2020/12/20/Day_3_notebook.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/mce-51069/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/mce-51069/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/mce-51069/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Study Artificial Intelligence from Theory-oriented to Practical Approach</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.facebook.com/https%3A%2F%2Fwww.facebook.com%2Fgroups%2F467439787576222" title="https://www.facebook.com/groups/467439787576222"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#facebook"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCDFhKEbfpxKXVk4Mryh7yhA" title="https://www.youtube.com/channel/UCDFhKEbfpxKXVk4Mryh7yhA"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
