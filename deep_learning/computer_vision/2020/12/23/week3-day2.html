@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Week 3, Day 2 (YOLO Model Training and Evaluation) | McE-51069</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Week 3, Day 2 (YOLO Model Training and Evaluation)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to second day (Week 3) of the McE-51069 course." />
+<meta property="og:description" content="Welcome to second day (Week 3) of the McE-51069 course." />
+<link rel="canonical" href="https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/23/week3-day2.html" />
+<meta property="og:url" content="https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/23/week3-day2.html" />
+<meta property="og:site_name" content="McE-51069" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-23T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/23/week3-day2.html","@type":"BlogPosting","headline":"Week 3, Day 2 (YOLO Model Training and Evaluation)","dateModified":"2020-12-23T00:00:00-06:00","datePublished":"2020-12-23T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ytu-cvlab.github.io/mce-51069/deep_learning/computer_vision/2020/12/23/week3-day2.html"},"description":"Welcome to second day (Week 3) of the McE-51069 course.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/mce-51069/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ytu-cvlab.github.io/mce-51069/feed.xml" title="McE-51069" /><link rel="shortcut icon" type="image/x-icon" href="/mce-51069/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/mce-51069/">McE-51069</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/mce-51069/about/">About Us</a><a class="page-link" href="/mce-51069/search/">Search</a><a class="page-link" href="/mce-51069/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Week 3, Day 2 (YOLO Model Training and Evaluation)</h1><p class="page-description">Welcome to second day (Week 3) of the McE-51069 course.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-23T00:00:00-06:00" itemprop="datePublished">
+        Dec 23, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/mce-51069/categories/#deep_learning">deep_learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/mce-51069/categories/#computer_vision">computer_vision</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#YOLO-(You-Only-Look-Once)">YOLO (You Only Look Once) </a></li>
+<li class="toc-entry toc-h2"><a href="#Model-Architecture">Model Architecture </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Backbone">Backbone </a></li>
+<li class="toc-entry toc-h3"><a href="#Neck">Neck </a></li>
+<li class="toc-entry toc-h3"><a href="#Head">Head </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#How-YOLO-works">How YOLO works </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Grid-cells">Grid cells </a></li>
+<li class="toc-entry toc-h3"><a href="#Anchor-boxes">Anchor boxes </a></li>
+<li class="toc-entry toc-h3"><a href="#YOLO-Layer">YOLO Layer </a></li>
+<li class="toc-entry toc-h3"><a href="#Non-max-supression">Non-max supression </a></li>
+<li class="toc-entry toc-h3"><a href="#Recap">Recap </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Conclusion">Conclusion </a></li>
+<li class="toc-entry toc-h2"><a href="#References">References </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-12-23-week3-day2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notebook's from today's lecture is the based on the original yolov5 notebook modified by <a href="https://app.roboflow.com/">Roboflow</a>. You can access to the notebook from this <a href="http://colab.research.google.com/github/ytu-cvlab/mce-51069-week3-day1/blob/main/Tutorial_Custom_Roboflow_YOLOv5.ipynb">link</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="YOLO-(You-Only-Look-Once)">
+<a class="anchor" href="#YOLO-(You-Only-Look-Once)" aria-hidden="true"><span class="octicon octicon-link"></span></a>YOLO (You Only Look Once)<a class="anchor-link" href="#YOLO-(You-Only-Look-Once)"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Before YOLO paper was released, region proposal networks combined with CNNs are usually used for object detection. These RPNs have high precision but takes a lot of time to train. Many <a href="https://papers.nips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf">attempts</a> has been made to increase the speed of R-CNNs in the mid to late 2010s.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://arxiv.org/abs/1506.02640">YOLO</a> was introduced in 2015 and showed promise with its speed although it couldn't outperform other detection methods. Later, YOLOv3 was introduced and it made a breakthrough in object detection, outperforming all the object detectors.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Model-Architecture">
+<a class="anchor" href="#Model-Architecture" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Architecture<a class="anchor-link" href="#Model-Architecture"> </a>
+</h2>
+<p>Convolutional Neural Network process the image the same way we human process the visual signal from our real world. It is a hierarchy process, in which we first detect shape, the structure and then object.</p>
+<p>The model architecture of the Convolutional Neural Network is constructed just as the same as to first detect shape in the image, then the structure, and finally the object. By the difference process step in the model, it can be briefly divided into three part.</p>
+<ol>
+<li>Backbone (To detect the basic visual data, such as shape, line)</li>
+<li>Neck (Increase receptive field and connect higher layer feature with lower layer feature.)</li>
+<li>Head (Perform specific task : object detection, semantic segmentation, etc.)</li>
+</ol>
+<h3 id="Backbone">
+<a class="anchor" href="#Backbone" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backbone<a class="anchor-link" href="#Backbone"> </a>
+</h3>
+<p>In the research field of Deep learning in convolutional neural network, there are many state of the art backbone models that is proved to be useful in many difference field. Because of the basic visual information for all image data are similar, that is, shape, line and edge, so when researcher comes up with some idea of making a model, they often choose one of these state of the art as their backbone.</p>
+<p>There are many backbone models available in computer vision field. Some of them are:</p>
+<ol>
+<li>VGG model <a href="https://arxiv.org/pdf/1409.1556.pdf">paper</a>
+</li>
+<li>ResNet model <a href="https://arxiv.org/abs/1512.03385">paper</a>
+</li>
+<li>MobileNet <a href="https://arxiv.org/abs/1704.04861">paper</a>
+</li>
+<li>CSPNet <a href="https://arxiv.org/abs/1704.04861">paper</a>
+</li>
+</ol>
+<h3 id="Neck">
+<a class="anchor" href="#Neck" aria-hidden="true"><span class="octicon octicon-link"></span></a>Neck<a class="anchor-link" href="#Neck"> </a>
+</h3>
+<p>To train a complex model, it is convention to add more layers to the model, while it can increase the model complexity, the model tend to forget early information in the later part of model. To avoid this, Neck layer connect between low level layers with high level layers, so that the early information in the model can last till the end of the model. Also, neck layer increase the receptive field of the model by various method. The most popular method is called the <a href="https://arxiv.org/abs/1406.4729">SPP</a>(Spatial Pyramid Pooling) module, where the model use difference kernel size to convolute the output from the backbone. The neck layer for YOLOv4 is the comibination of <a href="https://arxiv.org/abs/1803.01534">PANet</a> (Path-Aggregation Net) and <a href="https://arxiv.org/abs/1406.4729">SPP</a>(Spatial Pyramid Pooling) module.</p>
+<h3 id="Head">
+<a class="anchor" href="#Head" aria-hidden="true"><span class="octicon octicon-link"></span></a>Head<a class="anchor-link" href="#Head"> </a>
+</h3>
+<p>The head of the model determine the task of the model. For example, for image classification model, the head would output the number of class in that dataset. While in the object detection, the head would output the bounding box location, the class of that bounding box and its confidence score, etc. The head of the model combine information feed from the neck and make the decision for the model.
+The head used in YOLO is called the YOLO head, where it performs only once for object detection.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-YOLO-works">
+<a class="anchor" href="#How-YOLO-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How YOLO works<a class="anchor-link" href="#How-YOLO-works"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Grid-cells">
+<a class="anchor" href="#Grid-cells" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grid cells<a class="anchor-link" href="#Grid-cells"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Yolo uses grid cells to identify objects. All grid cells are processed at once: hence, You Look Only Once.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/grid_cells.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Anchor-boxes">
+<a class="anchor" href="#Anchor-boxes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anchor boxes<a class="anchor-link" href="#Anchor-boxes"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>N anchor boxes are then introduced to each grid cell to detect the objects in a grid cell. The boxes can also extend outside of each grid cell if the centroid of the detected object falls into its region</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/Anchor_boxes.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="YOLO-Layer">
+<a class="anchor" href="#YOLO-Layer" aria-hidden="true"><span class="octicon octicon-link"></span></a>YOLO Layer<a class="anchor-link" href="#YOLO-Layer"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The output from the YOLO layer is determined by objectness, annotation dimensions and class confidence level for each class. Let's assume that we are detecting three classes. Thus, if we have 3x3 grid cells with 2 anchors, the output will be (3 x 3 x 16)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/yolo_output.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/yolo.jpg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Non-max-supression">
+<a class="anchor" href="#Non-max-supression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Non-max supression<a class="anchor-link" href="#Non-max-supression"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Initially, each grid cell on the image generate n anchor boxes.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/generated_anchors.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>YOLO then performs non-max supression on that anchor boxes to remove the anchor boxes with lower confidence levels.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/nms.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Recap">
+<a class="anchor" href="#Recap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recap<a class="anchor-link" href="#Recap"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/mce-51069/images/copied_from_nb/images/yolo_recap.PNG" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">
+<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As research efforts are poured into YOLO, developvers are putting more focus into optimizing the model. The fastest versions of YOLO <a href="https://github.com/pjreddie/darknet">v4</a> and <a href="https://github.com/ultralytics/yolov5">v5</a> are regarded as state of the art object detection models available today and will remain in the top spot for the near future.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">
+<a class="anchor" href="#References" aria-hidden="true"><span class="octicon octicon-link"></span></a>References<a class="anchor-link" href="#References"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://app.roboflow.com/">https://app.roboflow.com/</a></p>
+<p><a href="https://www.coursera.org/lecture/convolutional-neural-networks/yolo-algorithm-fF3O0">https://www.coursera.org/lecture/convolutional-neural-networks/yolo-algorithm-fF3O0</a></p>
+<p><a href="https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data#6-visualize">https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data#6-visualize</a></p>
+<p><a href="https://www.analyticsvidhya.com/blog/2020/08/selecting-the-right-bounding-box-using-non-max-suppression-with-implementation/">https://www.analyticsvidhya.com/blog/2020/08/selecting-the-right-bounding-box-using-non-max-suppression-with-implementation/</a></p>
+<p><a href="https://paperswithcode.com/method/yolov4">https://paperswithcode.com/method/yolov4</a></p>
+<p><a href="https://medium.com/towards-artificial-intelligence/yolo-v5-explained-and-demystified-4e4719891d69">https://medium.com/towards-artificial-intelligence/yolo-v5-explained-and-demystified-4e4719891d69</a></p>
+<p><a href="https://www.coursera.org/lecture/convolutional-neural-networks/anchor-boxes-yNwO0">https://www.coursera.org/lecture/convolutional-neural-networks/anchor-boxes-yNwO0</a></p>
+<p><a href="https://towardsdatascience.com/yolo-you-only-look-once-real-time-object-detection-explained-492dc9230006">https://towardsdatascience.com/yolo-you-only-look-once-real-time-object-detection-explained-492dc9230006</a></p>
+<p><a href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5</a></p>
+<p><a href="https://engineering.fb.com/2016/08/25/ml-applications/segmenting-and-refining-images-with-sharpmask/">https://engineering.fb.com/2016/08/25/ml-applications/segmenting-and-refining-images-with-sharpmask/</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/mce-51069/deep_learning/computer_vision/2020/12/23/week3-day2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/mce-51069/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/mce-51069/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/mce-51069/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Study Artificial Intelligence from Theory-oriented to Practical Approach</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.facebook.com/https%3A%2F%2Fwww.facebook.com%2Fgroups%2F467439787576222" title="https://www.facebook.com/groups/467439787576222"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#facebook"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCDFhKEbfpxKXVk4Mryh7yhA" title="https://www.youtube.com/channel/UCDFhKEbfpxKXVk4Mryh7yhA"><svg class="svg-icon grey"><use xlink:href="/mce-51069/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
