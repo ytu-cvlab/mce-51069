@@ -281,11 +281,11 @@ $</p>
 </h2>
 <p>Dropout one of the most commonly used method for regularization. Here, we will take cutout as example and explain why dropout work.</p>
 <p>Neural network work by detecting the features in the dataset. And since some of the features are more importance than the others, the neural network tends to focus more on these features and not learn other features. That may lead to bias, biased to some features in the dataset.</p>
-<p><img src="/mce-51069/images/copied_from_nb/images/importance.jpeg" alt=""></p>
+<p><img src="/mce-51069/images/copied_from_nb/images/importance.jpeg" alt='"Some features are more importance"'></p>
 <p>Like the figure show above, the model will most likely focus on the face part of the dataset. To avoid that, when training, we can introduce some random cutout of the dataset.</p>
-<p><img src="/mce-51069/images/copied_from_nb/images/cutout.jpeg" alt=""></p>
+<p><img src="/mce-51069/images/copied_from_nb/images/cutout.jpeg" alt='"Cutout"'></p>
 <p>This way, our model is forced to learn other features aside from the most importance feature. This is on the dataset side. For the model side, this is carried out by dropout, which randomly shut down some of the neurons in training process. In convolutional neural network, this process is called dropblock.</p>
-<p><img src="/mce-51069/images/copied_from_nb/images/dropblock.jpeg" alt=""></p>
+<p><img src="/mce-51069/images/copied_from_nb/images/dropblock.jpeg" alt='"Dropblock"'></p>
 
 </div>
 </div>
