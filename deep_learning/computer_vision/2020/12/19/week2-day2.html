@@ -124,7 +124,7 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h1"><a href="#Regularization">Regularization </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#L1-and-L2-Regularizaiton">L1 and L2 Regularizaiton </a></li>
+<li class="toc-entry toc-h2"><a href="#$L_1$-and-$L_2$-Regularizaiton">$L_1$ and $L_2$ Regularizaiton </a></li>
 <li class="toc-entry toc-h2"><a href="#Dropout-and-Cutout">Dropout and Cutout </a></li>
 <li class="toc-entry toc-h2"><a href="#Data-Augmentation">Data Augmentation </a></li>
 </ul>
@@ -167,18 +167,21 @@ window.onload = wrap_img;
 </h1>
 <p>Now, we will introduce Adam optimizer, which is also known as the adaptive moment estimation optimizer.</p>
 <p>Let's recall the Gradient Descent Optimizer:</p>
-<p>$W = W-\alpha \frac{dL}{dW}$, in which $\alpha$ is called the learning rate, which is a constant or decaying learning rate, depanding on the number of epoch trained.</p>
-<p>The weight value is updated according to the loss value. But, the loss value from the model can be instable at first, due to dataset randomness, or dropout in model. So, instead of directly update the new $\frac{dL}{dW}$, we will update the exponentially weight average of $\frac{dL}{dW}$, which state that, the model is updated according to the past and current $\frac{dL}{dW}$. The result is smoother update in the weight value respect to the loss.</p>
+<p>$W = W-\alpha \frac{dL}{dW}$, in which $\alpha$ is called the learning rate, which is a constance or decaying learning rate, depanding on the number of epoch trained.</p>
+<p>The weight value is updated according to the loss value. But, the loss value from the model can be instable at first, due to dataset randomness, or dropout in model. So, instead of directly update the new $\frac{dL}{dW}$, we will update the exponentially weighted average of $\frac{dL}{dW}$, which state that, the model is updated according to the past and current $\frac{dL}{dW}$. The result is smoother update in the weight value respect to the loss.</p>
+<blockquote>
 <p>$V_t = \beta*V_{t-1} + (1-\beta)dW$<br>
 $W = W - \alpha V_{dW}$</p>
+</blockquote>
 <p><img src="/mce-51069/images/copied_from_nb/animations/gradient_descent_with_momentum.gif" alt=""></p>
 <p>Like that, another method called RMS Prop further smooth out the training procedure.</p>
+<blockquote>
 <p>$S_{dW} = \beta_2*S_{dW} + (1-\beta_2)dW^2$<br>
 $W = W - \alpha\frac{dW}{\sqrt{S_{dW}} + \epsilon}$</p>
-<p>By combining the two equations above, the eqaution for Adam optimizer become:<br>
-$W = W - \alpha\frac{V_{dW}^{corrected}}{\sqrt{S_dW^{corrected} }+ \varepsilon}
+</blockquote>
+<p>By combining the two equations above, the eqaution for Adam optimizer become:<br>$W = W - \alpha\frac{V_{dW}^{corrected}}{\sqrt{S_dW^{corrected} }+ \varepsilon}
 $</p>
-<p>There are two hyper-parameters in this equation and the author of the adam optimizer suggests the value for $beta_1$ to be 0.9 and $beta_2$ to be 0.99.</p>
+<p>There are two hyper-parameters in this equation and the author of the adam optimizer suggests the value for $\beta_1$ to be 0.9 and $\beta_2$ to be 0.99.</p>
 
 </div>
 </div>
@@ -195,7 +198,7 @@ $</p>
 <li>Dataset or environment in reinforcement learning.</li>
 </ol>
 <p>Dataset is like the fuel for our model. If the dataset is well processed, and contain rich information, the performance of the model can go up accordingly.</p>
-<p>When we get a dataset and want to use it for training the model, the dataset can be separated into three sections:</p>
+<p>When we get a dataset and want to use it for training the model, we will first have to separate the dataset into three parts:</p>
 <ol>
 <li>Training Dataset (Dataset used to train the model)</li>
 <li>Validation Dataset (Dataset used for hyper-parameters tunning)</li>
@@ -237,7 +240,7 @@ $</p>
 <h1 id="Regularization">
 <a class="anchor" href="#Regularization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regularization<a class="anchor-link" href="#Regularization"> </a>
 </h1>
-<p>Underfitting can be solved by simply making the model to be more complex, able to learn non-linearity. But, regarding about the overfitting, we have to make adjustment, either to the model, or to dataset. This process of preventing the overfitting of the model is called regularization.</p>
+<p>Underfitting can be solved by simply making the model to be more complex (adding more layers), able to learn non-linearity. But, regarding about the overfitting, we have to make adjustment, either to the model, or to dataset. This process of preventing the overfitting of the model is called regularization.</p>
 <p>Typical regularization methods contain:<br></p>
 <ul>
 <li>Model side:<ol>
@@ -250,7 +253,7 @@ $</p>
 </ol>
 </li>
 </ul>
-<p>The regularization on the model side, is basically making the model to be simple, oppose to fixing underfitting problem, by turning some neurons in the model off. We will discuss more about regularization method in the following section.</p>
+<p>The regularization on the model side, is basically making the model to be simple, opposite to fixing underfitting problem, by turning some neurons in the model off. We will discuss more about regularization method in the following section.</p>
 
 </div>
 </div>
@@ -258,16 +261,16 @@ $</p>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="L1-and-L2-Regularizaiton">
-<a class="anchor" href="#L1-and-L2-Regularizaiton" aria-hidden="true"><span class="octicon octicon-link"></span></a>L1 and L2 Regularizaiton<a class="anchor-link" href="#L1-and-L2-Regularizaiton"> </a>
+<h2 id="$L_1$-and-$L_2$-Regularizaiton">
+<a class="anchor" href="#%24L_1%24-and-%24L_2%24-Regularizaiton" aria-hidden="true"><span class="octicon octicon-link"></span></a>$L_1$ and $L_2$ Regularizaiton<a class="anchor-link" href="#%24L_1%24-and-%24L_2%24-Regularizaiton"> </a>
 </h2>
-<p>L1 and L2 regularization is done by adding penalty to the cost function: $J$</p>
-<p>The cost function is:<br></p>
+<p>$L_1$ and $L_2$ regularization is done by adding penalty to the cost function: $J$</p>
+<p>The original cost function is:<br></p>
 <p>$J = \frac{1}{m}\sum_{m=0}^i L$</p>
-<p>In L1 regularization, the cost function is modified to :<br></p>
-<p>$J = \frac{1}{m}\sum_{m=0}^i L +\frac{\lambda}{2m}W $</p>
-<p>In L1 regularization, the cost function is modified to :<br></p>
-<p>$J = \frac{1}{m}\sum_{m=0}^i L +\frac{\lambda}{2m}W^TW $</p>
+<p>In $L_1$ regularization, the cost function is modified to :<br></p>
+<p>$J = \frac{1}{m}\sum_{m=0}^i (L +\frac{\lambda}{2m}W) $</p>
+<p>In $L_2$ regularization, the cost function is modified to :<br></p>
+<p>$J = \frac{1}{m}\sum_{m=0}^i (L +\frac{\lambda}{2m}W^TW) $</p>
 <p>To reduce the cost value, the regularization part must be kept small, and so the weight value will be small or kept to zero, which is the same as turning the neuron cell off.</p>
 
 </div>
@@ -279,10 +282,10 @@ $</p>
 <h2 id="Dropout-and-Cutout">
 <a class="anchor" href="#Dropout-and-Cutout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dropout and Cutout<a class="anchor-link" href="#Dropout-and-Cutout"> </a>
 </h2>
-<p>Dropout one of the most commonly used method for regularization. Here, we will take cutout as example and explain why dropout work.</p>
-<p>Neural network work by detecting the features in the dataset. And since some of the features are more importance than the others, the neural network tends to focus more on these features and not learn other features. That may lead to bias, biased to some features in the dataset.</p>
+<p>Dropout is one of the most commonly used method for regularization. Here, we will take cutout as example and explain why dropout work.</p>
+<p>Neural network work by detecting the features in the dataset. And since some of the features are more importance than the others, the neural network tends to focus more on these features and ignore other features. That may lead to bias, biased to some features in the dataset.</p>
 <p><img src="/mce-51069/images/copied_from_nb/images/importance.jpeg" alt='"Some features are more importance"'></p>
-<p>Like the figure show above, the model will most likely focus on the face part of the dataset. To avoid that, when training, we can introduce some random cutout of the dataset.</p>
+<p>Like the figure show above, the model will most likely focus on the face part of the dataset. To avoid that, when training, we can introduce some random cutout of the dataset. Cutout is the data augmentation method, in which random part of the input are being cropped out.</p>
 <p><img src="/mce-51069/images/copied_from_nb/images/cutout.jpeg" alt='"Cutout"'></p>
 <p>This way, our model is forced to learn other features aside from the most importance feature. This is on the dataset side. For the model side, this is carried out by dropout, which randomly shut down some of the neurons in training process. In convolutional neural network, this process is called dropblock.</p>
 <p><img src="/mce-51069/images/copied_from_nb/images/dropblock.jpeg" alt='"Dropblock"'></p>
@@ -309,7 +312,7 @@ $</p>
 <h1 id="Framework">
 <a class="anchor" href="#Framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Framework<a class="anchor-link" href="#Framework"> </a>
 </h1>
-<p>There are many frameworks for building the deep learning model. In this course, we will use Pytorch, which is a open source machine learning library based on Torch library. Pytorch has recently gain more popularity with researchers and production lines. So, there are many resources for learning deep learning with pytorch framework. And it is more friendly than tensorflow, which is also a open source deep learning library.</p>
+<p>There are many frameworks for building the deep learning model. In this course, we will use <a href="https://pytorch.org">Pytorch</a>, which is a open source machine learning library based on Torch library. Pytorch has recently gain more popularity with researchers and in production lines. So, there are many resources for learning deep learning model. And it is more friendly than tensorflow, which is also a open source deep learning library.</p>
 
 </div>
 </div>
@@ -322,7 +325,7 @@ $</p>
 </h1>
 <p>For training a deep neural network, it is better to have a GPU for faster training.
 <img src="/mce-51069/images/copied_from_nb/images/cpu_gpu.jpeg" alt=""></p>
-<p>GPU, which can process more parallel task than CPU, are great arsenel in training neural network. And since not all one have a descent GPU in their comptuer, we will use <code>google colaboratory</code>, which is a jupyter-like development platform where we can get accessed to free GPU.</p>
+<p>GPU, which can process more parallel task than CPU, are great arsenel in training neural network. And because not all students have a descent GPU in their comptuer, we will use <a href="">google colaboratory</a>, which is a jupyter-like development platform where we can get accessed to free GPU.</p>
 
 </div>
 </div>
