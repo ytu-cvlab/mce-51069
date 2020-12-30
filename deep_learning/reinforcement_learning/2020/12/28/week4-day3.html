@@ -557,15 +557,24 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>!apt update &amp;&amp; apt install xvfb
-!pip install gym-notebook-wrapper</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt update <span class="o">&amp;&amp;</span> apt install xvfb
+<span class="o">!</span>pip install gym-notebook-wrapper
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
-</div>
-</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -937,6 +946,7 @@ Frames: 131296, Episodes: 100, Average reward: -18.73, Epsilon: 0.02
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">saved_file_path</span> <span class="o">=</span> <span class="s2">"pong-1000000-v1.pt"</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">target_network</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">saved_file_path</span><span class="p">)</span>
 
 <span class="n">q_network</span> <span class="o">=</span> <span class="n">DQN</span><span class="p">(</span><span class="n">n_actions</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <span class="n">q_network</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">saved_file_path</span><span class="p">))</span>
@@ -1010,6 +1020,23 @@ Action counts: Counter({5: 795, 4: 599, 2: 580, 3: 533, 1: 435, 0: 276})
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
